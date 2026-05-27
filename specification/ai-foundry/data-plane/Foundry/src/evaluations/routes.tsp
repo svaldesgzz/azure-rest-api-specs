@@ -1,16 +1,11 @@
 import "./models.tsp";
 
 using TypeSpec.Http;
-using Azure.Core.Traits;
 using TypeSpec.Versioning;
 
 namespace Azure.AI.Projects;
 
-alias ServiceTraits = SupportsClientRequestId &
-  NoRepeatableRequests &
-  NoConditionalRequests;
-
-alias EvaluationsOperations = Azure.Core.ResourceOperations<ServiceTraits>;
+alias EvaluationsOperations = FoundryAzureOperations<{}>;
 
 @route("evaluations")
 @removed(Versions.v1)
@@ -25,7 +20,7 @@ interface Evaluations {
   @doc("Creates an evaluation run.")
   @route("runs:run")
   @post
-  create is Azure.Core.Foundations.Operation<
+  create is FoundryOperation<
     {
       @doc("Evaluation to be run")
       @body
@@ -38,7 +33,7 @@ interface Evaluations {
   @doc("Creates an agent evaluation run.")
   @route("runs:runAgent")
   @post
-  createAgentEvaluation is Azure.Core.Foundations.Operation<
+  createAgentEvaluation is FoundryOperation<
     {
       @doc("Agent evaluation to be run")
       @body

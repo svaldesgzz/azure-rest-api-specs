@@ -21,7 +21,7 @@ alias EvaluationTaxonomiesFilterQueryParamsTraits = {
 @tag("Evaluation Taxonomies")
 interface EvaluationTaxonomies {
   @doc("Get an evaluation run by name.")
-  get is Azure.Core.Foundations.ResourceOperation<
+  get is FoundryResourceOperation<
     EvaluationTaxonomy,
     {
       ...EvaluationTaxonomiesPreviewHeader;
@@ -31,7 +31,7 @@ interface EvaluationTaxonomies {
 
   @doc("List evaluation taxonomies")
   @Rest.listsResource(EvaluationTaxonomy)
-  list is Azure.Core.Foundations.ResourceList<
+  list is FoundryResourceList<
     EvaluationTaxonomy,
     EvaluationTaxonomiesFilterQueryParamsTraits &
       EvaluationTaxonomiesPreviewHeader,
@@ -40,7 +40,7 @@ interface EvaluationTaxonomies {
 
   @doc("Delete an evaluation taxonomy by name.")
   @Http.delete
-  delete is Azure.Core.Foundations.ResourceOperation<
+  delete is FoundryResourceOperation<
     EvaluationTaxonomy,
     {
       ...EvaluationTaxonomiesPreviewHeader;
@@ -51,7 +51,7 @@ interface EvaluationTaxonomies {
   @doc("Create an evaluation taxonomy.")
   @put
   @route("/evaluationtaxonomies/{name}")
-  create is Azure.Core.Foundations.Operation<
+  create is FoundryOperation<
     {
       ...EvaluationTaxonomiesPreviewHeader;
 
@@ -70,7 +70,7 @@ interface EvaluationTaxonomies {
   @doc("Update an evaluation taxonomy.")
   @patch(#{ implicitOptionality: true })
   @route("/evaluationtaxonomies/{name}")
-  update is Azure.Core.Foundations.Operation<
+  update is FoundryOperation<
     {
       ...EvaluationTaxonomiesPreviewHeader;
 

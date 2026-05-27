@@ -28,7 +28,7 @@ interface Evaluators {
   @Rest.actionSeparator("/")
   @Http.get
   @list
-  listVersions is Azure.Core.StandardResourceOperations.ResourceAction<
+  listVersions is FoundryStandardResourceOperations.ResourceAction<
     EvaluatorVersion,
     ListEvaluatorVersionsParameters & EvaluatorsPreviewHeader,
     Azure.Core.Page<EvaluatorVersion>
@@ -38,7 +38,7 @@ interface Evaluators {
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations"
   @doc("List the latest version of each evaluator")
   @Rest.listsResource(EvaluatorVersion)
-  listLatestVersions is Azure.Core.Foundations.ResourceList<
+  listLatestVersions is FoundryResourceList<
     EvaluatorVersion,
     ListEvaluatorVersionsParameters & EvaluatorsPreviewHeader,
     Azure.Core.Page<EvaluatorVersion>
@@ -50,7 +50,7 @@ interface Evaluators {
     "Get the specific version of the {name}. The service returns 404 Not Found error if the {name} does not exist.",
     EvaluatorVersion
   )
-  getVersion is Azure.Core.Foundations.ResourceOperation<
+  getVersion is FoundryResourceOperation<
     EvaluatorVersion,
     {
       ...EvaluatorsPreviewHeader;
@@ -73,7 +73,7 @@ interface Evaluators {
     EvaluatorVersion
   )
   @Http.delete
-  deleteVersion is Azure.Core.Foundations.ResourceOperation<
+  deleteVersion is FoundryResourceOperation<
     EvaluatorVersion,
     {
       ...EvaluatorsPreviewHeader;
@@ -91,7 +91,7 @@ interface Evaluators {
   @doc("Create a new {name} with auto incremented version id", EvaluatorVersion)
   @Rest.segment("versions")
   @Http.post
-  createVersion is Azure.Core.Foundations.ResourceOperation<
+  createVersion is FoundryResourceOperation<
     EvaluatorVersion,
     {
       ...EvaluatorsPreviewHeader;
@@ -107,7 +107,7 @@ interface Evaluators {
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations"
   @doc("Update an existing {name} with the given version id", EvaluatorVersion)
   @Http.patch(#{ implicitOptionality: true })
-  updateVersion is Azure.Core.Foundations.ResourceOperation<
+  updateVersion is FoundryResourceOperation<
     EvaluatorVersion,
     {
       ...EvaluatorsPreviewHeader;

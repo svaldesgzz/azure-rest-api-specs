@@ -30,7 +30,7 @@ interface Schedules {
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "We need explicit definition for header support"
   @doc("Delete a schedule.")
   @Http.delete
-  delete is Azure.Core.Foundations.ResourceOperation<
+  delete is FoundryResourceOperation<
     Schedule,
     {
       ...SchedulesPreviewHeader;
@@ -40,7 +40,7 @@ interface Schedules {
 
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "We need explicit definition for header support"
   @doc("Get a schedule by id.")
-  get is Azure.Core.Foundations.ResourceOperation<
+  get is FoundryResourceOperation<
     Schedule,
     {
       ...SchedulesPreviewHeader;
@@ -51,7 +51,7 @@ interface Schedules {
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "We need explicit definition for header support"
   @doc("List all schedules.")
   @Rest.listsResource(Schedule)
-  list is Azure.Core.Foundations.ResourceList<
+  list is FoundryResourceList<
     Schedule,
     SchedulesFilterQueryParams & SchedulesPreviewHeader,
     Azure.Core.Page<Schedule>
@@ -60,7 +60,7 @@ interface Schedules {
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "We need explicit definition for header support"
   @doc("Create or update operation template.")
   @Http.put
-  createOrUpdate is Azure.Core.Foundations.ResourceOperation<
+  createOrUpdate is FoundryResourceOperation<
     Schedule,
     SchedulesCreateOrUpdateParams,
     Azure.Core.Foundations.ResourceCreatedOrOkResponse<Schedule>
@@ -88,7 +88,7 @@ interface Schedules {
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "We need explicit definition for header support"
   @doc("List all schedule runs.")
   @Rest.listsResource(ScheduleRun)
-  listRuns is Azure.Core.Foundations.ResourceList<
+  listRuns is FoundryResourceList<
     ScheduleRun,
     SchedulesFilterQueryParams & SchedulesPreviewHeader,
     Azure.Core.Page<ScheduleRun>

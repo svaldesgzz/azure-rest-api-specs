@@ -33,7 +33,7 @@ interface Models
     ModelVersion
   )
   @extension("x-ms-foundry-meta", ModelsRequiredPreviews)
-  getVersion is Azure.Core.Foundations.ResourceOperation<
+  getVersion is FoundryResourceOperation<
     ModelVersion,
     {
       ...ModelsPreviewHeader;
@@ -53,7 +53,7 @@ interface Models
   )
   @delete
   @extension("x-ms-foundry-meta", ModelsRequiredPreviews)
-  deleteVersion is Azure.Core.Foundations.ResourceOperation<
+  deleteVersion is FoundryResourceOperation<
     ModelVersion,
     {
       ...ModelsPreviewHeader;
@@ -75,7 +75,7 @@ interface Models
   @operationId("Models_updateVersion")
   @patch
   @extension("x-ms-foundry-meta", ModelsRequiredPreviews)
-  createOrUpdateVersion is Azure.Core.Foundations.ResourceOperation<
+  createOrUpdateVersion is FoundryResourceOperation<
     ModelVersion,
     InputParameters<UpdateModelVersionRequest> & ModelsPreviewHeader,
     Azure.Core.Foundations.ResourceCreatedOrOkResponse<ModelVersion>
@@ -86,7 +86,7 @@ interface Models
   @route("/models/{name}/versions/{version}/createAsync")
   @post
   @extension("x-ms-foundry-meta", ModelsRequiredPreviews)
-  createAsync is Azure.Core.Foundations.Operation<
+  createAsync is FoundryOperation<
     {
       ...ModelsPreviewHeader;
 
@@ -110,7 +110,7 @@ interface Models
   @route("/models/{name}/versions/{version}/startPendingUpload")
   @post
   @extension("x-ms-foundry-meta", ModelsRequiredPreviews)
-  startPendingUpload is Azure.Core.Foundations.Operation<
+  startPendingUpload is FoundryOperation<
     {
       ...ModelsPreviewHeader;
 
@@ -133,7 +133,7 @@ interface Models
   @route("/models/{name}/versions/{version}/credentials")
   @post
   @extension("x-ms-foundry-meta", ModelsRequiredPreviews)
-  getCredentials is Azure.Core.Foundations.Operation<
+  getCredentials is FoundryOperation<
     {
       ...ModelsPreviewHeader;
 

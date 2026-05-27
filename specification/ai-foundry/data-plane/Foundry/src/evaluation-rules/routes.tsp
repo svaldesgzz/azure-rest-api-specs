@@ -27,7 +27,7 @@ alias EvaluationRulesFilterQueryParams = {
 interface EvaluationRules {
   // GET /evaluationrules/{id}
   @doc("Get an evaluation rule.")
-  get is Azure.Core.Foundations.ResourceOperation<
+  get is FoundryResourceOperation<
     EvaluationRule,
     {},
     Azure.Core.Foundations.ResourceOkResponse<EvaluationRule>
@@ -36,7 +36,7 @@ interface EvaluationRules {
   // DELETE /evaluationrules/{id}
   @doc("Delete an evaluation rule.")
   @Http.delete
-  delete is Azure.Core.Foundations.ResourceOperation<
+  delete is FoundryResourceOperation<
     EvaluationRule,
     {},
     Http.NoContentResponse
@@ -45,7 +45,7 @@ interface EvaluationRules {
   // PUT /evaluationrules/{id}
   @doc("Create or update an evaluation rule.")
   @Http.put
-  createOrUpdate is Azure.Core.Foundations.ResourceOperation<
+  createOrUpdate is FoundryResourceOperation<
     EvaluationRule,
     {
       ...EvaluationRulesPreviewHeader;
@@ -60,7 +60,7 @@ interface EvaluationRules {
   // GET /evaluationrules
   @doc("List all evaluation rules.")
   @Rest.listsResource(EvaluationRule)
-  list is Azure.Core.Foundations.ResourceList<
+  list is FoundryResourceList<
     EvaluationRule,
     EvaluationRulesFilterQueryParams,
     Azure.Core.Page<EvaluationRule>

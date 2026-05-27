@@ -156,8 +156,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -314,8 +324,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -412,8 +432,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -483,8 +513,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -621,8 +661,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -700,8 +750,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -779,8 +839,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -869,8 +939,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -948,8 +1028,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1027,8 +1117,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1108,8 +1208,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1184,8 +1294,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1328,8 +1448,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1445,8 +1575,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1502,8 +1642,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1570,8 +1720,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1656,8 +1816,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1718,8 +1888,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1817,8 +1997,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1919,8 +2109,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1998,8 +2198,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2092,8 +2302,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2186,8 +2406,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2273,8 +2503,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2427,8 +2667,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2524,8 +2774,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2623,8 +2883,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful. "
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2720,8 +2990,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2827,8 +3107,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2914,8 +3204,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2992,8 +3292,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3063,8 +3373,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3120,8 +3440,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3262,8 +3592,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3340,8 +3680,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3416,8 +3766,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3559,8 +3919,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3620,8 +3990,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3690,8 +4070,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3763,8 +4153,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3909,8 +4309,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3996,8 +4406,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4098,8 +4518,18 @@
           "200": {
             "description": "The request has succeeded."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4185,8 +4615,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4296,8 +4736,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4383,8 +4833,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4492,8 +4952,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4550,8 +5020,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4603,8 +5083,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4681,8 +5171,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -4747,8 +5256,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -4813,8 +5341,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -4946,8 +5493,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5030,8 +5587,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5121,8 +5688,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5182,8 +5759,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5252,8 +5839,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5293,8 +5890,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5347,8 +5963,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5410,8 +6045,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5464,8 +6118,27 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5535,8 +6208,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5609,8 +6301,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5672,8 +6383,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5770,8 +6500,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5836,8 +6585,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -5926,8 +6694,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6064,8 +6842,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6144,8 +6932,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6205,8 +7003,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6275,8 +7083,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6326,8 +7144,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6377,8 +7214,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6445,8 +7301,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6512,8 +7378,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6563,8 +7448,27 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6631,8 +7535,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6712,8 +7635,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6791,8 +7724,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6845,8 +7797,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6890,8 +7861,27 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -6964,8 +7954,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7032,8 +8041,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7095,8 +8123,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7149,8 +8196,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7205,8 +8271,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7247,8 +8332,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7300,8 +8404,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7385,8 +8508,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7451,8 +8593,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7508,8 +8669,27 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7582,8 +8762,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7657,8 +8856,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -7758,8 +8976,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7896,8 +9124,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7976,8 +9214,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8036,8 +9284,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8106,8 +9364,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8191,8 +9459,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8289,8 +9576,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8353,8 +9659,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8438,8 +9763,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8504,8 +9848,27 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8577,8 +9940,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8669,8 +10051,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8757,8 +10149,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8809,8 +10211,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8863,8 +10284,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8926,8 +10366,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -8980,8 +10439,27 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -9051,8 +10529,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -9145,8 +10642,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9259,8 +10766,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9333,8 +10850,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9409,8 +10936,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9474,8 +11011,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9548,8 +11095,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9605,8 +11162,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9662,8 +11229,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9829,8 +11406,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9898,8 +11485,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9989,8 +11586,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10056,8 +11663,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10125,8 +11742,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10236,8 +11863,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10331,8 +11968,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10407,8 +12054,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10554,8 +12211,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10651,8 +12318,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10720,8 +12397,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10808,8 +12495,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -10925,8 +12622,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -11014,8 +12721,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11080,8 +12806,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11155,8 +12900,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11226,8 +12990,27 @@
           "200": {
             "description": "The request has succeeded."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11314,8 +13097,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11428,8 +13230,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11519,8 +13340,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11609,8 +13449,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -11675,8 +13534,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -11813,8 +13682,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -11864,8 +13743,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -11923,8 +13812,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -11972,8 +13871,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12036,8 +13945,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12186,8 +14105,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12246,8 +14175,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12304,8 +14243,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12418,8 +14367,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12449,8 +14408,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12502,8 +14471,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12543,8 +14522,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12584,8 +14573,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12720,8 +14719,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12760,8 +14769,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12822,8 +14841,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12872,8 +14901,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -12922,8 +14961,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13052,8 +15101,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13113,8 +15172,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13156,8 +15225,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13229,8 +15308,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13281,8 +15370,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13333,8 +15432,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13407,8 +15516,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13481,8 +15600,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13533,8 +15662,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13585,8 +15724,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -13641,8 +15790,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14214,8 +16373,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14246,8 +16415,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14363,8 +16542,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14421,8 +16610,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14481,8 +16680,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14608,8 +16817,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14656,8 +16875,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -14722,8 +16960,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -14786,8 +17043,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14920,8 +17187,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -14983,8 +17260,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -15054,8 +17341,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -15108,8 +17405,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -15242,8 +17549,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -15305,8 +17622,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -15368,8 +17695,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -15441,8 +17778,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -15514,8 +17861,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -15573,8 +17939,27 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful."
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -15637,8 +18022,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -15711,8 +18115,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -15808,8 +18231,27 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "headers": {
+              "x-ms-error-code": {
+                "required": false,
+                "description": "String error code indicating what went wrong.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Azure.Core.Foundations.ErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "headers": {
               "x-ms-error-code": {
                 "required": false,
@@ -15890,8 +18332,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16013,8 +18465,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16082,8 +18544,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16149,8 +18621,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16235,8 +18717,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16305,8 +18797,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16374,8 +18876,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16546,8 +19058,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16624,8 +19146,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16700,8 +19232,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16779,8 +19321,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16895,8 +19447,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16947,8 +19509,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -16991,8 +19563,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -17044,8 +19626,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful. "
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -17097,8 +19689,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -17264,8 +19866,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -17325,8 +19937,18 @@
               }
             }
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -17377,8 +19999,18 @@
           "204": {
             "description": "There is no content to send for this request, but the headers may be useful. "
           },
-          "default": {
-            "description": "An unexpected error response.",
+          "4XX": {
+            "description": "Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Server error",
             "content": {
               "application/json": {
                 "schema": {
