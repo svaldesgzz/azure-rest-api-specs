@@ -36,8 +36,8 @@ paths:
   /agent_optimization_jobs:
     post:
       operationId: AgentOptimizationJobs_create
-      summary: Creates an agent optimization job.
-      description: Create an optimization job. Returns 201 with the queued job. Honours `Operation-Id` for idempotent retry.
+      summary: Create an agent optimization job.
+      description: Creates an optimization job. Returns 201 with the queued job. Honours `Operation-Id` for idempotent retry.
       parameters:
         - name: Foundry-Features
           in: header
@@ -104,8 +104,8 @@ paths:
           - AgentsOptimization=V1Preview
     get:
       operationId: AgentOptimizationJobs_list
-      summary: Returns a list of agent optimization jobs.
-      description: List optimization jobs. Supports cursor pagination and optional status / agentName filters.
+      summary: List agent optimization jobs.
+      description: Lists optimization jobs. Supports cursor pagination and optional status / agentName filters.
       parameters:
         - name: Foundry-Features
           in: header
@@ -223,7 +223,7 @@ paths:
     get:
       operationId: AgentOptimizationJobs_get
       summary: Get info about an agent optimization job.
-      description: Get an optimization job by id. Returns 202 while in progress, 200 when terminal.
+      description: Gets an optimization job by id. Returns 202 while in progress, 200 when terminal.
       parameters:
         - name: Foundry-Features
           in: header
@@ -290,8 +290,8 @@ paths:
           - AgentsOptimization=V1Preview
     delete:
       operationId: AgentOptimizationJobs_delete
-      summary: Deletes an agent optimization job.
-      description: Delete the job and its candidate artifacts. Cancels first if non-terminal.
+      summary: Delete an agent optimization job.
+      description: Deletes the job and its candidate artifacts. Cancels first if non-terminal.
       parameters:
         - name: Foundry-Features
           in: header
@@ -344,8 +344,8 @@ paths:
   /agent_optimization_jobs/{jobId}/candidates:
     get:
       operationId: AgentOptimizationJobs_listCandidates
-      summary: Returns a list of candidates for an optimization job.
-      description: List candidates produced by a job.
+      summary: List candidates for an optimization job.
+      description: Lists candidates produced by a job.
       parameters:
         - name: Foundry-Features
           in: header
@@ -455,7 +455,7 @@ paths:
     get:
       operationId: AgentOptimizationJobs_getCandidate
       summary: Get a candidate by id.
-      description: Get a single candidate's metadata, manifest, and promotion info.
+      description: Gets a single candidate's metadata, manifest, and promotion info.
       parameters:
         - name: Foundry-Features
           in: header
@@ -512,7 +512,7 @@ paths:
     get:
       operationId: AgentOptimizationJobs_getCandidateConfig
       summary: Get candidate deploy config.
-      description: Get the candidate's deploy config JSON. Used to compose `agents.create_version(...)` from a candidate.
+      description: Gets the candidate's deploy config JSON. Used to compose `agents.create_version(...)` from a candidate.
       parameters:
         - name: Foundry-Features
           in: header
@@ -569,7 +569,7 @@ paths:
     get:
       operationId: AgentOptimizationJobs_getCandidateFile
       summary: Get a candidate file.
-      description: Stream a specific file from the candidate's blob directory.
+      description: Streams a specific file from the candidate's blob directory.
       parameters:
         - name: Foundry-Features
           in: header
@@ -634,7 +634,7 @@ paths:
     get:
       operationId: AgentOptimizationJobs_getCandidateResults
       summary: Get candidate evaluation results.
-      description: Get full per-task evaluation results for a candidate.
+      description: Gets full per-task evaluation results for a candidate.
       parameters:
         - name: Foundry-Features
           in: header
@@ -754,7 +754,7 @@ paths:
   /agent_optimization_jobs/{jobId}:cancel:
     post:
       operationId: AgentOptimizationJobs_cancel
-      summary: Cancels an agent optimization job.
+      summary: Cancel an agent optimization job.
       description: Request cancellation. Idempotent on terminal states.
       parameters:
         - name: Foundry-Features
@@ -1282,7 +1282,7 @@ paths:
     get:
       operationId: Agents_downloadAgentCode
       description: |-
-        Download the code zip for a code-based hosted agent.
+        Downloads the code zip for a code-based hosted agent.
         Returns the previously-uploaded zip (`application/zip`).
 
         If `agent_version` is supplied, returns that version's code zip; otherwise
@@ -1359,6 +1359,7 @@ paths:
   /agents/{agent_name}/endpoint/protocols/invocations:
     post:
       operationId: AgentInvocations_createAgentInvocation
+      summary: Create an agent invocation
       description: Creates an invocation for the specified agent version.
       parameters:
         - name: agent_name
@@ -1438,6 +1439,7 @@ paths:
   /agents/{agent_name}/endpoint/protocols/invocations/docs/openapi.json:
     get:
       operationId: AgentInvocations_getAgentInvocationOpenApiSpec
+      summary: Get an agent invocation OpenAPI spec
       description: |-
         Retrieves the OpenAPI specification for an agent version's invocation contract.
         Returns 404 if the agent does not expose an OpenAPI specification.
@@ -1491,6 +1493,7 @@ paths:
   /agents/{agent_name}/endpoint/protocols/invocations/{invocation_id}:
     get:
       operationId: AgentInvocations_getAgentInvocation
+      summary: Get an agent invocation
       description: |-
         Retrieves the invocation with the given ID.
         Returns 404 if the agent does not support this operation or if the invocation ID is not found.
@@ -1560,6 +1563,7 @@ paths:
   /agents/{agent_name}/endpoint/protocols/invocations/{invocation_id}/cancel:
     post:
       operationId: AgentInvocations_cancelAgentInvocation
+      summary: Cancel an agent invocation
       description: |-
         Cancels an invocation.
         Returns 404 if the agent does not support this operation or if the invocation ID is not found.
@@ -1814,8 +1818,9 @@ paths:
   /agents/{agent_name}/endpoint/sessions/{agent_session_id}/files:
     get:
       operationId: AgentSessionFiles_listSessionFiles
+      summary: List session files
       description: |-
-        List files and directories at a given path in the session sandbox.
+        Lists files and directories at a given path in the session sandbox.
         Returns only the immediate children of the specified directory (non-recursive).
       parameters:
         - name: Foundry-Features
@@ -1884,8 +1889,9 @@ paths:
           - HostedAgents=V1Preview
     delete:
       operationId: AgentSessionFiles_deleteSessionFile
+      summary: Delete a session file
       description: |-
-        Delete a file or directory from the session sandbox.
+        Deletes a file or directory from the session sandbox.
         If `recursive` is false (default) and the target is a non-empty directory, the API returns 409 Conflict.
       parameters:
         - name: Foundry-Features
@@ -1959,8 +1965,9 @@ paths:
   /agents/{agent_name}/endpoint/sessions/{agent_session_id}/files/content:
     put:
       operationId: AgentSessionFiles_uploadSessionFile
+      summary: Upload a session file
       description: |-
-        Upload a file to the session sandbox via binary stream.
+        Uploads a file to the session sandbox via binary stream.
         Maximum file size is 50 MB. Uploads exceeding this limit return 413 Payload Too Large.
       parameters:
         - name: Foundry-Features
@@ -2036,7 +2043,8 @@ paths:
           - HostedAgents=V1Preview
     get:
       operationId: AgentSessionFiles_downloadSessionFile
-      description: Download a file from the session sandbox as a binary stream.
+      summary: Download a session file
+      description: Downloads a file from the session sandbox as a binary stream.
       parameters:
         - name: Foundry-Features
           in: header
@@ -2328,7 +2336,8 @@ paths:
   /agents/{agent_name}/operations:
     get:
       operationId: AgentContainers_listAgentContainerOperations
-      description: List container operations for an agent.
+      summary: List agent container operations
+      description: Lists container operations for an agent.
       parameters:
         - name: Foundry-Features
           in: header
@@ -2437,7 +2446,8 @@ paths:
   /agents/{agent_name}/operations/{operation_id}:
     get:
       operationId: AgentContainers_getAgentContainerOperation
-      description: Get the status of a container operation for an agent.
+      summary: Get an agent container operation
+      description: Gets the status of a container operation for an agent.
       parameters:
         - name: Foundry-Features
           in: header
@@ -2524,7 +2534,8 @@ paths:
           description: SHA-256 hex digest of the uploaded code zip. Used for change detection (dedup) and integrity verification.
           schema:
             type: string
-      description: Create a new agent version.
+      description: Creates a new agent version.
+      summary: Create an agent version
       responses:
         '200':
           description: The request has succeeded.
@@ -2761,7 +2772,8 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/containers/default:
     get:
       operationId: AgentContainers_getAgentContainer
-      description: Get a container for a specific version of an agent.
+      summary: Get an agent container
+      description: Gets a container for a specific version of an agent.
       parameters:
         - name: Foundry-Features
           in: header
@@ -2817,7 +2829,8 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/containers/default/operations:
     get:
       operationId: AgentContainers_listAgentVersionContainerOperations
-      description: List container operations for a specific version of an agent.
+      summary: List agent version container operations
+      description: Lists container operations for a specific version of an agent.
       parameters:
         - name: Foundry-Features
           in: header
@@ -2932,8 +2945,9 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/containers/default:delete:
     post:
       operationId: AgentContainers_deleteAgentContainer
+      summary: Delete an agent container
       description: |-
-        Delete a container for a specific version of an agent. If the container doesn't exist, the operation will be no-op.
+        Deletes a container for a specific version of an agent. If the container doesn't exist, the operation will be no-op.
         The operation is a long-running operation. Following the design guidelines for long-running operations in Azure REST APIs.
         https://github.com/microsoft/api-guidelines/blob/vNext/azure/ConsiderationsForServiceDesign.md#action-operations
       parameters:
@@ -2997,6 +3011,7 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/containers/default:logstream:
     post:
       operationId: AgentContainers_streamAgentContainerLogs
+      summary: Stream agent container logs
       description: |-
         Container log entry streamed from the container as text chunks.
         Each chunk is a UTF-8 string that may be either a plain text log line
@@ -3087,8 +3102,9 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/containers/default:start:
     post:
       operationId: AgentContainers_startAgentContainer
+      summary: Start an agent container
       description: |-
-        Start a container for a specific version of an agent. If the container is already running, the operation will be no-op.
+        Starts a container for a specific version of an agent. If the container is already running, the operation will be no-op.
         The operation is a long-running operation. Following the design guidelines for long-running operations in Azure REST APIs.
         https://github.com/microsoft/api-guidelines/blob/vNext/azure/ConsiderationsForServiceDesign.md#action-operations
       parameters:
@@ -3169,8 +3185,9 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/containers/default:stop:
     post:
       operationId: AgentContainers_stopAgentContainer
+      summary: Stop an agent container
       description: |-
-        Stop a container for a specific version of an agent. If the container is not running, or already stopped, the operation will be no-op.
+        Stops a container for a specific version of an agent. If the container is not running, or already stopped, the operation will be no-op.
         The operation is a long-running operation. Following the design guidelines for long-running operations in Azure REST APIs.
         https://github.com/microsoft/api-guidelines/blob/vNext/azure/ConsiderationsForServiceDesign.md#action-operations
       parameters:
@@ -3234,8 +3251,9 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/containers/default:update:
     post:
       operationId: AgentContainers_updateAgentContainer
+      summary: Update an agent container
       description: |-
-        Update a container for a specific version of an agent. If the container is not running, the operation will be no-op.
+        Updates a container for a specific version of an agent. If the container is not running, the operation will be no-op.
         The operation is a long-running operation. Following the design guidelines for long-running operations in Azure REST APIs.
         https://github.com/microsoft/api-guidelines/blob/vNext/azure/ConsiderationsForServiceDesign.md#action-operations
       parameters:
@@ -3402,7 +3420,8 @@ paths:
   /agents/{agent_name}/versions:import:
     post:
       operationId: Agents_createAgentVersionFromManifest
-      description: Create a new agent version from a manifest.
+      summary: Create an agent version from manifest
+      description: Creates a new agent version from a manifest.
       parameters:
         - name: agent_name
           in: path
@@ -3491,20 +3510,21 @@ paths:
   /connections:
     get:
       operationId: Connections_list
-      description: List all connections in the project, without populating connection credentials
+      summary: List all connections
+      description: Lists all connections in the project, without populating connection credentials
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: connectionType
           in: query
           required: false
-          description: List connections of this specific type
+          description: Lists connections of this specific type
           schema:
             $ref: '#/components/schemas/ConnectionType'
           explode: false
         - name: defaultConnection
           in: query
           required: false
-          description: List connections that are default connections
+          description: Lists connections that are default connections
           schema:
             type: boolean
           explode: false
@@ -3551,7 +3571,8 @@ paths:
   /connections/{name}:
     get:
       operationId: Connections_get
-      description: Get a connection by name, without populating connection credentials
+      summary: Get a connection
+      description: Gets a connection by name, without populating connection credentials
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -3603,7 +3624,8 @@ paths:
   /connections/{name}/getConnectionWithCredentials:
     post:
       operationId: Connections_getWithCredentials
-      description: Get a connection by name, with its connection credentials
+      summary: Get a connection with credentials
+      description: Gets a connection by name, with its connection credentials
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -3655,7 +3677,7 @@ paths:
   /data_generation_jobs:
     get:
       operationId: DataGenerationJobs_list
-      summary: Returns a list of data generation jobs
+      summary: List data generation jobs
       description: Returns a list of data generation jobs.
       parameters:
         - name: Foundry-Features
@@ -3758,7 +3780,7 @@ paths:
           - DataGenerationJobs=V1Preview
     post:
       operationId: DataGenerationJobs_create
-      summary: Creates a data generation job.
+      summary: Create a data generation job.
       description: Creates a data generation job.
       parameters:
         - name: Foundry-Features
@@ -3884,7 +3906,7 @@ paths:
           - DataGenerationJobs=V1Preview
     delete:
       operationId: DataGenerationJobs_delete
-      summary: Deletes a data generation job.
+      summary: Delete a data generation job.
       description: Deletes a data generation job by its ID.
       parameters:
         - name: Foundry-Features
@@ -3931,7 +3953,7 @@ paths:
   /data_generation_jobs/{jobId}:cancel:
     post:
       operationId: DataGenerationJobs_cancel
-      summary: Cancels a data generation job.
+      summary: Cancel a data generation job.
       description: Cancels a data generation job by its ID.
       parameters:
         - name: Foundry-Features
@@ -4226,7 +4248,8 @@ paths:
   /datasets/{name}/versions/{version}/credentials:
     post:
       operationId: Datasets_getCredentials
-      description: Get the SAS credential to access the storage account associated with a Dataset version.
+      summary: Get dataset credentials
+      description: Gets the SAS credential to access the storage account associated with a Dataset version.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -4277,7 +4300,8 @@ paths:
   /datasets/{name}/versions/{version}/startPendingUpload:
     post:
       operationId: Datasets_startPendingUploadVersion
-      description: Start a new or get an existing pending upload of a dataset for a specific version.
+      summary: Start a pending upload
+      description: Starts a new or get an existing pending upload of a dataset for a specific version.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -4335,7 +4359,8 @@ paths:
   /deployments:
     get:
       operationId: Deployments_list
-      description: List all deployed models in the project
+      summary: List all deployments
+      description: Lists all deployed models in the project
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: modelPublisher
@@ -4402,7 +4427,8 @@ paths:
   /deployments/{name}:
     get:
       operationId: Deployments_get
-      description: Get a deployed model.
+      summary: Get a deployment
+      description: Gets a deployed model.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -4454,7 +4480,7 @@ paths:
   /evaluation_suite_generation_jobs:
     post:
       operationId: EvaluationSuiteGenerationJobs_create
-      summary: Creates an evaluation suite generation job.
+      summary: Create an evaluation suite generation job.
       description: Create a new job (preview). Includes optional Foundry-Features header and Operation-Id for idempotent retries.
       parameters:
         - name: Foundry-Features
@@ -4522,7 +4548,7 @@ paths:
           - Evaluations=V1Preview
     get:
       operationId: EvaluationSuiteGenerationJobs_list
-      summary: Returns a list of evaluation suite generation jobs.
+      summary: List evaluation suite generation jobs.
       description: List jobs with cursor-based pagination (preview). Includes optional Foundry-Features header.
       parameters:
         - name: Foundry-Features
@@ -4683,7 +4709,7 @@ paths:
           - Evaluations=V1Preview
     delete:
       operationId: EvaluationSuiteGenerationJobs_delete
-      summary: Deletes an evaluation suite generation job.
+      summary: Delete an evaluation suite generation job.
       description: Delete a job (preview). Returns 204 No Content.
       parameters:
         - name: Foundry-Features
@@ -4730,7 +4756,7 @@ paths:
   /evaluation_suite_generation_jobs/{jobId}:cancel:
     post:
       operationId: EvaluationSuiteGenerationJobs_cancel
-      summary: Cancels an evaluation suite generation job.
+      summary: Cancel an evaluation suite generation job.
       description: Cancel a running job (preview). Returns 200 with the updated job.
       parameters:
         - name: Foundry-Features
@@ -4867,6 +4893,7 @@ paths:
                 $ref: '#/components/schemas/Azure.Core.Foundations.ErrorResponse'
     post:
       operationId: EvaluationSuites_createEvaluationSuiteVersion
+      summary: Create an evaluation suite version
       description: Create a new EvaluationSuiteVersion with auto incremented version id
       parameters:
         - name: Foundry-Features
@@ -5076,7 +5103,8 @@ paths:
   /evaluation_suites/{name}:run:
     post:
       operationId: EvaluationSuites_run
-      description: Run an evaluation using the suite's testing criteria and dataset.
+      summary: Run an evaluation suite
+      description: Runs an evaluation using the suite's testing criteria and dataset.
       parameters:
         - name: Foundry-Features
           in: header
@@ -5131,7 +5159,8 @@ paths:
   /evaluationrules:
     get:
       operationId: EvaluationRules_list
-      description: List all evaluation rules.
+      summary: List evaluation rules
+      description: Lists all evaluation rules.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: actionType
@@ -5191,7 +5220,8 @@ paths:
   /evaluationrules/{id}:
     get:
       operationId: EvaluationRules_get
-      description: Get an evaluation rule.
+      summary: Get an evaluation rule
+      description: Gets an evaluation rule.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: id
@@ -5235,7 +5265,8 @@ paths:
         - Evaluation Rules
     delete:
       operationId: EvaluationRules_delete
-      description: Delete an evaluation rule.
+      summary: Delete an evaluation rule
+      description: Deletes an evaluation rule.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: id
@@ -5275,7 +5306,8 @@ paths:
         - Evaluation Rules
     put:
       operationId: EvaluationRules_createOrUpdate
-      description: Create or update an evaluation rule.
+      summary: Create or update an evaluation rule
+      description: Creates or update an evaluation rule.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: id
@@ -5341,7 +5373,8 @@ paths:
   /evaluations/runs:
     get:
       operationId: Evaluations_list
-      description: List evaluation runs
+      summary: List evaluation runs
+      description: Lists evaluation runs
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - $ref: '#/components/parameters/Azure.Core.ClientRequestIdHeader'
@@ -5385,7 +5418,8 @@ paths:
   /evaluations/runs/{name}:
     get:
       operationId: Evaluations_get
-      description: Get an evaluation run by name.
+      summary: Get an evaluation run
+      description: Gets an evaluation run by name.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -5434,7 +5468,8 @@ paths:
                 $ref: '#/components/schemas/Azure.Core.Foundations.ErrorResponse'
     delete:
       operationId: Evaluations_delete
-      description: Delete an evaluation run by name
+      summary: Delete an evaluation run
+      description: Deletes an evaluation run by name
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -5480,7 +5515,8 @@ paths:
   /evaluations/runs/{name}:cancel:
     post:
       operationId: Evaluations_cancel
-      description: Cancel an evaluation run by name
+      summary: Cancel an evaluation run
+      description: Cancels an evaluation run by name
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -5526,6 +5562,7 @@ paths:
   /evaluations/runs:run:
     post:
       operationId: Evaluations_create
+      summary: Create an evaluation run
       description: Creates an evaluation run.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -5614,7 +5651,8 @@ paths:
   /evaluationtaxonomies:
     get:
       operationId: EvaluationTaxonomies_list
-      description: List evaluation taxonomies
+      summary: List evaluation taxonomies
+      description: Lists evaluation taxonomies
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: inputName
@@ -5675,7 +5713,8 @@ paths:
   /evaluationtaxonomies/{name}:
     get:
       operationId: EvaluationTaxonomies_get
-      description: Get an evaluation run by name.
+      summary: Get an evaluation taxonomy
+      description: Gets an evaluation run by name.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -5727,7 +5766,8 @@ paths:
         - Evaluation Taxonomies
     delete:
       operationId: EvaluationTaxonomies_delete
-      description: Delete an evaluation taxonomy by name.
+      summary: Delete an evaluation taxonomy
+      description: Deletes an evaluation taxonomy by name.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -5775,7 +5815,8 @@ paths:
         - Evaluation Taxonomies
     put:
       operationId: EvaluationTaxonomies_create
-      description: Create an evaluation taxonomy.
+      summary: Create an evaluation taxonomy
+      description: Creates an evaluation taxonomy.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: Foundry-Features
@@ -5840,7 +5881,8 @@ paths:
         description: The evaluation taxonomy.
     patch:
       operationId: EvaluationTaxonomies_update
-      description: Update an evaluation taxonomy.
+      summary: Update an evaluation taxonomy
+      description: Updates an evaluation taxonomy.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: Foundry-Features
@@ -5900,7 +5942,7 @@ paths:
   /evaluator_generation_jobs:
     post:
       operationId: EvaluatorGenerationJobs_create
-      summary: Creates an evaluator generation job.
+      summary: Create an evaluator generation job.
       description: |-
         Creates an evaluator generation job. The service generates rubric-based evaluator
         definitions from the provided source materials asynchronously.
@@ -5970,7 +6012,7 @@ paths:
           - Evaluations=V1Preview
     get:
       operationId: EvaluatorGenerationJobs_list
-      summary: Returns a list of evaluator generation jobs.
+      summary: List evaluator generation jobs.
       description: Returns a list of evaluator generation jobs.
       parameters:
         - name: Foundry-Features
@@ -6179,7 +6221,7 @@ paths:
   /evaluator_generation_jobs/{jobId}:cancel:
     post:
       operationId: EvaluatorGenerationJobs_cancel
-      summary: Cancels an evaluator generation job.
+      summary: Cancel an evaluator generation job.
       description: Cancels an evaluator generation job by its ID.
       parameters:
         - name: Foundry-Features
@@ -6230,7 +6272,8 @@ paths:
   /evaluators:
     get:
       operationId: Evaluators_listLatestVersions
-      description: List the latest version of each evaluator
+      summary: List latest evaluator versions
+      description: Lists the latest version of each evaluator
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: type
@@ -6297,7 +6340,8 @@ paths:
   /evaluators/{name}/versions:
     get:
       operationId: Evaluators_listVersions
-      description: List all versions of the given evaluator
+      summary: List evaluator versions
+      description: Lists all versions of the given evaluator
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -6369,6 +6413,7 @@ paths:
         - Evaluators
     post:
       operationId: Evaluators_createVersion
+      summary: Create an evaluator version
       description: Create a new EvaluatorVersion with auto incremented version id
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -6428,6 +6473,7 @@ paths:
   /evaluators/{name}/versions/{version}:
     get:
       operationId: Evaluators_getVersion
+      summary: Get an evaluator version
       description: Get the specific version of the EvaluatorVersion. The service returns 404 Not Found error if the EvaluatorVersion does not exist.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -6486,6 +6532,7 @@ paths:
         - Evaluators
     delete:
       operationId: Evaluators_deleteVersion
+      summary: Delete an evaluator version
       description: Delete the specific version of the EvaluatorVersion. The service returns 204 No Content if the EvaluatorVersion was deleted successfully or if the EvaluatorVersion does not exist.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -6540,6 +6587,7 @@ paths:
         - Evaluators
     patch:
       operationId: Evaluators_updateVersion
+      summary: Update an evaluator version
       description: Update an existing EvaluatorVersion with the given version id
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -6606,7 +6654,8 @@ paths:
   /evaluators/{name}/versions/{version}/credentials:
     post:
       operationId: Evaluators_getCredentials
-      description: Get the SAS credential to access the storage account associated with an Evaluator version.
+      summary: Get evaluator credentials
+      description: Gets the SAS credential to access the storage account associated with an Evaluator version.
       parameters:
         - name: Foundry-Features
           in: header
@@ -6668,7 +6717,8 @@ paths:
   /evaluators/{name}/versions/{version}/startPendingUpload:
     post:
       operationId: Evaluators_startPendingUpload
-      description: Start a new or get an existing pending upload of an evaluator for a specific version.
+      summary: Start a pending upload
+      description: Starts a new or get an existing pending upload of an evaluator for a specific version.
       parameters:
         - name: Foundry-Features
           in: header
@@ -6974,7 +7024,8 @@ paths:
   /insights:
     post:
       operationId: Insights_generate
-      description: Generate Insights
+      summary: Generate insights
+      description: Generates Insights
       parameters:
         - name: Foundry-Features
           in: header
@@ -7034,7 +7085,8 @@ paths:
         description: Complete evaluation configuration including data source, evaluators, and result settings
     get:
       operationId: Insights_list
-      description: List all insights in reverse chronological order (newest first).
+      summary: List insights
+      description: Lists all insights in reverse chronological order (newest first).
       parameters:
         - name: Foundry-Features
           in: header
@@ -7110,7 +7162,8 @@ paths:
   /insights/{id}:
     get:
       operationId: Insights_get
-      description: Get a specific insight by Id.
+      summary: Get an insight
+      description: Gets a specific insight by Id.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7164,6 +7217,8 @@ paths:
   /managedAgentIdentityBlueprints:
     get:
       operationId: ManagedAgentIdentityBlueprints_listManagedAgentIdentityBlueprints
+      summary: List all blueprints
+      description: Lists all managed agent identity blueprints.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7225,6 +7280,8 @@ paths:
   /managedAgentIdentityBlueprints/{blueprint_name}:
     put:
       operationId: ManagedAgentIdentityBlueprints_createOrUpdateManagedAgentIdentityBlueprint
+      summary: Create or update a blueprint
+      description: Creates or updates a managed agent identity blueprint.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7277,6 +7334,7 @@ paths:
           - AgentEndpoints=V1Preview
     get:
       operationId: ManagedAgentIdentityBlueprints_getManagedAgentIdentityBlueprint
+      summary: Get a blueprint
       description: Retrieves a managed agent identity blueprint by name.
       parameters:
         - name: Foundry-Features
@@ -7324,6 +7382,7 @@ paths:
           - AgentEndpoints=V1Preview
     delete:
       operationId: ManagedAgentIdentityBlueprints_deleteManagedAgentIdentityBlueprint
+      summary: Delete a blueprint
       description: Deletes a managed agent identity blueprint by name.
       parameters:
         - name: Foundry-Features
@@ -7368,7 +7427,8 @@ paths:
   /memory_stores:
     post:
       operationId: createMemoryStore
-      description: Create a memory store.
+      summary: Create a memory store
+      description: Creates a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7438,7 +7498,8 @@ paths:
           - MemoryStores=V1Preview
     get:
       operationId: listMemoryStores
-      description: List all memory stores.
+      summary: List all memory stores
+      description: Lists all memory stores.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7541,7 +7602,8 @@ paths:
   /memory_stores/{name}:
     post:
       operationId: updateMemoryStore
-      description: Update a memory store.
+      summary: Update a memory store
+      description: Updates a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7606,7 +7668,8 @@ paths:
           - MemoryStores=V1Preview
     get:
       operationId: getMemoryStore
-      description: Retrieve a memory store.
+      summary: Get a memory store
+      description: Retrieves a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7655,7 +7718,8 @@ paths:
           - MemoryStores=V1Preview
     delete:
       operationId: deleteMemoryStore
-      description: Delete a memory store.
+      summary: Delete a memory store
+      description: Deletes a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7705,7 +7769,8 @@ paths:
   /memory_stores/{name}/items:
     post:
       operationId: createMemory
-      description: Create a memory item in a memory store.
+      summary: Create a memory item
+      description: Creates a memory item in a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7776,7 +7841,8 @@ paths:
   /memory_stores/{name}/items/{memory_id}:
     post:
       operationId: updateMemory
-      description: Update a memory item in a memory store.
+      summary: Update a memory item
+      description: Updates a memory item in a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7843,7 +7909,8 @@ paths:
           - MemoryStores=V1Preview
     get:
       operationId: getMemory
-      description: Retrieve a memory item from a memory store.
+      summary: Get a memory item
+      description: Retrieves a memory item from a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7898,7 +7965,8 @@ paths:
           - MemoryStores=V1Preview
     delete:
       operationId: deleteMemory
-      description: Delete a memory item from a memory store.
+      summary: Delete a memory item
+      description: Deletes a memory item from a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -7954,7 +8022,8 @@ paths:
   /memory_stores/{name}/items:list:
     post:
       operationId: listMemories
-      description: List all memory items in a memory store.
+      summary: List all memory items
+      description: Lists all memory items in a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -8082,7 +8151,8 @@ paths:
   /memory_stores/{name}/updates/{update_id}:
     get:
       operationId: getUpdateResult
-      description: Get memory store update result.
+      summary: Get an update result
+      description: Gets memory store update result.
       parameters:
         - name: Foundry-Features
           in: header
@@ -8138,7 +8208,8 @@ paths:
   /memory_stores/{name}:delete_scope:
     post:
       operationId: deleteScopeMemories
-      description: Delete all memories associated with a specific scope from a memory store.
+      summary: Delete memories by scope
+      description: Deletes all memories associated with a specific scope from a memory store.
       parameters:
         - name: Foundry-Features
           in: header
@@ -8200,7 +8271,8 @@ paths:
   /memory_stores/{name}:search_memories:
     post:
       operationId: searchMemories
-      description: Search for relevant memories from a memory store based on conversation context.
+      summary: Search memories
+      description: Searches for relevant memories from a memory store based on conversation context.
       parameters:
         - name: Foundry-Features
           in: header
@@ -8274,7 +8346,8 @@ paths:
   /memory_stores/{name}:update_memories:
     post:
       operationId: updateMemories
-      description: Update memory store with conversation memories.
+      summary: Update memories
+      description: Updates memory store with conversation memories.
       parameters:
         - name: Foundry-Features
           in: header
@@ -8460,6 +8533,7 @@ paths:
   /models/{name}/versions/{version}:
     get:
       operationId: Models_getVersion
+      summary: Get a model version
       description: Get the specific version of the ModelVersion. The service returns 404 Not Found error if the ModelVersion does not exist.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -8521,6 +8595,7 @@ paths:
           - Models=V1Preview
     delete:
       operationId: Models_deleteVersion
+      summary: Delete a model version
       description: Delete the specific version of the ModelVersion. The service returns 200 OK if the ModelVersion was deleted successfully or if the ModelVersion does not exist.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -8578,6 +8653,7 @@ paths:
           - Models=V1Preview
     patch:
       operationId: Models_updateVersion
+      summary: Update a model version
       description: Update an existing ModelVersion with the given version id
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -8653,6 +8729,7 @@ paths:
   /models/{name}/versions/{version}/createAsync:
     post:
       operationId: Models_createAsync
+      summary: Create a model version async
       description: Creates a model version asynchronously with blob content validation. Returns 202 Accepted with a Location header for polling.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -8739,7 +8816,8 @@ paths:
   /models/{name}/versions/{version}/credentials:
     post:
       operationId: Models_getCredentials
-      description: Get credentials for a model version asset.
+      summary: Get model asset credentials
+      description: Gets credentials for a model version asset.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: Foundry-Features
@@ -8807,7 +8885,8 @@ paths:
   /models/{name}/versions/{version}/startPendingUpload:
     post:
       operationId: Models_startPendingUpload
-      description: Start or retrieve a pending upload for a model version.
+      summary: Start a pending upload
+      description: Starts or retrieve a pending upload for a model version.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: Foundry-Features
@@ -10882,7 +10961,7 @@ paths:
   /openai/v1/conversations:
     post:
       operationId: createConversation
-      description: Create a conversation.
+      description: Creates a conversation.
       parameters:
         - name: x-ms-user-isolation-key
           in: header
@@ -11024,7 +11103,7 @@ paths:
   /openai/v1/conversations/{conversation_id}:
     post:
       operationId: updateConversation
-      description: Update a conversation.
+      description: Updates a conversation.
       parameters:
         - name: conversation_id
           in: path
@@ -11142,7 +11221,7 @@ paths:
   /openai/v1/conversations/{conversation_id}/items:
     post:
       operationId: createConversationItems
-      description: Create items in a conversation with the given ID.
+      description: Creates items in a conversation with the given ID.
       parameters:
         - name: conversation_id
           in: path
@@ -11205,7 +11284,7 @@ paths:
                 - items
     get:
       operationId: listConversationItems
-      description: List all items for a conversation with the given ID.
+      description: Lists all items for a conversation with the given ID.
       parameters:
         - name: conversation_id
           in: path
@@ -11309,7 +11388,7 @@ paths:
   /openai/v1/conversations/{conversation_id}/items/{item_id}:
     get:
       operationId: getConversationItem
-      description: Get a single item from a conversation with the given IDs.
+      description: Gets a single item from a conversation with the given IDs.
       parameters:
         - name: conversation_id
           in: path
@@ -11352,7 +11431,7 @@ paths:
         - Conversations
     delete:
       operationId: deleteConversationItem
-      description: Delete an item from a conversation with the given IDs.
+      description: Deletes an item from a conversation with the given IDs.
       parameters:
         - name: conversation_id
           in: path
@@ -11397,7 +11476,7 @@ paths:
     get:
       operationId: Evals_listEvals
       summary: List all evaluations
-      description: List evaluations for a project.
+      description: Lists evaluations for a project.
       parameters:
         - name: after
           in: query
@@ -11482,7 +11561,7 @@ paths:
       operationId: Evals_createEval
       summary: Create evaluation
       description: |-
-        Create the structure of an evaluation that can be used to test a model's performance.
+        Creates the structure of an evaluation that can be used to test a model's performance.
         An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.
         For more information, see the [Evals guide](https://platform.openai.com/docs/guides/evals).
       parameters: []
@@ -11517,7 +11596,7 @@ paths:
     delete:
       operationId: Evals_deleteEval
       summary: Delete an evaluation
-      description: Delete an evaluation.
+      description: Deletes an evaluation.
       parameters:
         - name: eval_id
           in: path
@@ -11549,7 +11628,7 @@ paths:
     get:
       operationId: Evals_getEval
       summary: Get an evaluation
-      description: Get an evaluation by ID.
+      description: Gets an evaluation by ID.
       parameters:
         - name: eval_id
           in: path
@@ -11581,7 +11660,7 @@ paths:
     post:
       operationId: Evals_updateEval
       summary: Update an evaluation
-      description: Update certain properties of an evaluation.
+      description: Updates certain properties of an evaluation.
       parameters:
         - name: eval_id
           in: path
@@ -11620,7 +11699,7 @@ paths:
     get:
       operationId: Evals_listRuns
       summary: Get a list of runs for an evaluation
-      description: Get a list of runs for an evaluation.
+      description: Gets a list of runs for an evaluation.
       parameters:
         - name: eval_id
           in: path
@@ -11749,7 +11828,7 @@ paths:
     delete:
       operationId: Evals_deleteEvalRun
       summary: Delete evaluation run
-      description: Delete an eval run.
+      description: Deletes an eval run.
       parameters:
         - name: eval_id
           in: path
@@ -11787,7 +11866,7 @@ paths:
     get:
       operationId: Evals_getEvalRun
       summary: Get an evaluation run
-      description: Get an evaluation run by ID.
+      description: Gets an evaluation run by ID.
       parameters:
         - name: eval_id
           in: path
@@ -11825,7 +11904,7 @@ paths:
     post:
       operationId: Evals_cancelEvalRun
       summary: Cancel evaluation run
-      description: Cancel an ongoing evaluation run.
+      description: Cancels an ongoing evaluation run.
       parameters:
         - name: eval_id
           in: path
@@ -11864,7 +11943,7 @@ paths:
     get:
       operationId: Evals_getEvalRunOutputItems
       summary: Get evaluation run output items
-      description: Get a list of output items for an evaluation run.
+      description: Gets a list of output items for an evaluation run.
       parameters:
         - name: eval_id
           in: path
@@ -11959,7 +12038,7 @@ paths:
     get:
       operationId: Evals_getEvalRunOutputItem
       summary: Get an output item of an evaluation run
-      description: Get an evaluation run output item by ID.
+      description: Gets an evaluation run output item by ID.
       parameters:
         - name: eval_id
           in: path
@@ -12046,7 +12125,7 @@ paths:
               $ref: '#/components/schemas/OpenAI.CreateFineTuningJobRequest'
     get:
       operationId: listPaginatedFineTuningJobs
-      description: List your organization's fine-tuning jobs
+      description: Lists your organization's fine-tuning jobs
       parameters:
         - name: after
           in: query
@@ -12096,7 +12175,7 @@ paths:
     get:
       operationId: retrieveFineTuningJob
       description: |-
-        Get info about a fine-tuning job.
+        Gets info about a fine-tuning job.
 
         [Learn more about fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)
       parameters:
@@ -12137,7 +12216,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel:
     post:
       operationId: cancelFineTuningJob
-      description: Immediately cancel a fine-tune job.
+      description: Immediately cancels a fine-tune job.
       parameters:
         - name: fine_tuning_job_id
           in: path
@@ -12176,7 +12255,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/checkpoints:
     get:
       operationId: listFineTuningJobCheckpoints
-      description: List checkpoints for a fine-tuning job.
+      description: Lists checkpoints for a fine-tuning job.
       parameters:
         - name: fine_tuning_job_id
           in: path
@@ -12231,7 +12310,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/events:
     get:
       operationId: listFineTuningJobEvents
-      description: Get fine-grained status updates for a fine-tuning job.
+      description: Gets fine-grained status updates for a fine-tuning job.
       parameters:
         - name: fine_tuning_job_id
           in: path
@@ -12286,7 +12365,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/pause:
     post:
       operationId: pauseFineTuningJob
-      description: Pause a running fine-tune job.
+      description: Pauses a running fine-tune job.
       parameters:
         - name: fine_tuning_job_id
           in: path
@@ -12325,7 +12404,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/resume:
     post:
       operationId: resumeFineTuningJob
-      description: Resume a paused fine-tune job.
+      description: Resumes a paused fine-tune job.
       parameters:
         - name: fine_tuning_job_id
           in: path
@@ -13108,7 +13187,7 @@ paths:
   /redTeams/runs:
     get:
       operationId: RedTeams_list
-      description: List a redteam by name.
+      description: Lists a redteam by name.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: Foundry-Features
@@ -13155,7 +13234,7 @@ paths:
   /redTeams/runs/{name}:
     get:
       operationId: RedTeams_get
-      description: Get a redteam by name.
+      description: Gets a redteam by name.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: name
@@ -13256,7 +13335,7 @@ paths:
   /routines:
     get:
       operationId: listRoutines
-      description: List routines.
+      description: Lists routines.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13359,7 +13438,7 @@ paths:
   /routines/{routine_name}:
     put:
       operationId: createOrUpdateRoutine
-      description: Create or update a routine.
+      description: Creates or update a routine.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13409,7 +13488,7 @@ paths:
           - Routines=V1Preview
     get:
       operationId: getRoutine
-      description: Retrieve a routine.
+      description: Retrieves a routine.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13453,7 +13532,7 @@ paths:
           - Routines=V1Preview
     delete:
       operationId: deleteRoutine
-      description: Delete a routine.
+      description: Deletes a routine.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13494,7 +13573,7 @@ paths:
   /routines/{routine_name}/runs:
     get:
       operationId: listRoutineRuns
-      description: List prior runs for a routine.
+      description: Lists prior runs for a routine.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13599,7 +13678,7 @@ paths:
   /routines/{routine_name}:disable:
     post:
       operationId: disableRoutine
-      description: Disable a routine.
+      description: Disables a routine.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13644,7 +13723,7 @@ paths:
   /routines/{routine_name}:dispatch_async:
     post:
       operationId: dispatchRoutineAsync
-      description: Queue an asynchronous routine dispatch.
+      description: Queues an asynchronous routine dispatch.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13695,7 +13774,7 @@ paths:
   /routines/{routine_name}:enable:
     post:
       operationId: enableRoutine
-      description: Enable a routine.
+      description: Enables a routine.
       parameters:
         - name: Foundry-Features
           in: header
@@ -13740,7 +13819,7 @@ paths:
   /schedules:
     get:
       operationId: Schedules_list
-      description: List all schedules.
+      description: Lists all schedules.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: type
@@ -13801,7 +13880,7 @@ paths:
   /schedules/{id}:
     delete:
       operationId: Schedules_delete
-      description: Delete a schedule.
+      description: Deletes a schedule.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: id
@@ -13849,7 +13928,7 @@ paths:
         - Schedules
     get:
       operationId: Schedules_get
-      description: Get a schedule by id.
+      description: Gets a schedule by id.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: id
@@ -13901,7 +13980,7 @@ paths:
         - Schedules
     put:
       operationId: Schedules_createOrUpdate
-      description: Create or update operation template.
+      description: Creates or update operation template.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: id
@@ -13967,7 +14046,7 @@ paths:
   /schedules/{id}/runs:
     get:
       operationId: Schedules_listRuns
-      description: List all schedule runs.
+      description: Lists all schedule runs.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
         - name: id
@@ -14034,7 +14113,7 @@ paths:
   /schedules/{schedule_id}/runs/{run_id}:
     get:
       operationId: Schedules_getRun
-      description: Get a schedule run by id.
+      description: Gets a schedule run by id.
       parameters:
         - name: schedule_id
           in: path
@@ -14239,7 +14318,7 @@ paths:
           - Skills=V1Preview
     post:
       operationId: updateSkill
-      description: Update a skill.
+      description: Updates a skill.
       parameters:
         - name: name
           in: path
@@ -14350,7 +14429,7 @@ paths:
   /skills/{name}/content:
     get:
       operationId: getSkillContent
-      description: Download the zip content for the default version of a skill.
+      description: Downloads the zip content for the default version of a skill.
       parameters:
         - name: name
           in: path
@@ -14472,7 +14551,7 @@ paths:
                 contentType: text/plain
     get:
       operationId: listSkillVersions
-      description: List all versions of a skill.
+      description: Lists all versions of a skill.
       parameters:
         - name: name
           in: path
@@ -14581,7 +14660,7 @@ paths:
   /skills/{name}/versions/{version}:
     get:
       operationId: getSkillVersion
-      description: Retrieve a specific version of a skill.
+      description: Retrieves a specific version of a skill.
       parameters:
         - name: name
           in: path
@@ -14636,7 +14715,7 @@ paths:
           - Skills=V1Preview
     delete:
       operationId: deleteSkillVersion
-      description: Delete a specific version of a skill.
+      description: Deletes a specific version of a skill.
       parameters:
         - name: name
           in: path
@@ -14692,7 +14771,7 @@ paths:
   /skills/{name}/versions/{version}/content:
     get:
       operationId: getSkillVersionContent
-      description: Download the zip content for a specific version of a skill.
+      description: Downloads the zip content for a specific version of a skill.
       parameters:
         - name: name
           in: path
@@ -14749,7 +14828,7 @@ paths:
   /toolboxes:
     get:
       operationId: listToolboxes
-      description: List all toolboxes.
+      description: Lists all toolboxes.
       parameters:
         - name: limit
           in: query
@@ -14841,7 +14920,7 @@ paths:
   /toolboxes/{name}:
     get:
       operationId: getToolbox
-      description: Retrieve a toolbox.
+      description: Retrieves a toolbox.
       parameters:
         - name: name
           in: path
@@ -14879,7 +14958,7 @@ paths:
         - Toolboxes
     patch:
       operationId: updateToolbox
-      description: Update a toolbox to point to a specific version.
+      description: Updates a toolbox to point to a specific version.
       parameters:
         - $ref: '#/components/parameters/UpdateToolboxRequest.name'
         - name: api-version
@@ -14918,7 +14997,7 @@ paths:
               $ref: '#/components/schemas/UpdateToolboxRequest'
     delete:
       operationId: deleteToolbox
-      description: Delete a toolbox and all its versions.
+      description: Deletes a toolbox and all its versions.
       parameters:
         - name: name
           in: path
@@ -14953,7 +15032,7 @@ paths:
   /toolboxes/{name}/versions:
     post:
       operationId: createToolboxVersion
-      description: Create a new version of a toolbox. If the toolbox does not exist, it will be created.
+      description: Creates a new version of a toolbox. If the toolbox does not exist, it will be created.
       parameters:
         - name: name
           in: path
@@ -15024,7 +15103,7 @@ paths:
                 - tools
     get:
       operationId: listToolboxVersions
-      description: List all versions of a toolbox.
+      description: Lists all versions of a toolbox.
       parameters:
         - name: name
           in: path
@@ -15122,7 +15201,7 @@ paths:
   /toolboxes/{name}/versions/{version}:
     get:
       operationId: getToolboxVersion
-      description: Retrieve a specific version of a toolbox.
+      description: Retrieves a specific version of a toolbox.
       parameters:
         - name: name
           in: path
@@ -15166,7 +15245,7 @@ paths:
         - Toolboxes
     delete:
       operationId: deleteToolboxVersion
-      description: Delete a specific version of a toolbox.
+      description: Deletes a specific version of a toolbox.
       parameters:
         - name: name
           in: path

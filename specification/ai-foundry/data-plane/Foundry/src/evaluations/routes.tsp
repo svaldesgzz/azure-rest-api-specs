@@ -10,13 +10,16 @@ alias EvaluationsOperations = FoundryAzureOperations<{}>;
 @route("evaluations")
 @removed(Versions.v1)
 interface Evaluations {
-  @doc("Get an evaluation run by name.")
+  @summary("Get an evaluation run")
+  @doc("Gets an evaluation run by name.")
   get is EvaluationsOperations.ResourceRead<Evaluation>;
 
-  @doc("List evaluation runs")
+  @summary("List evaluation runs")
+  @doc("Lists evaluation runs")
   list is EvaluationsOperations.ResourceList<Evaluation>;
 
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations"
+  @summary("Create an evaluation run")
   @doc("Creates an evaluation run.")
   @route("runs:run")
   @post
@@ -43,7 +46,8 @@ interface Evaluations {
   >;
 
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations"
-  @doc("Cancel an evaluation run by name")
+  @summary("Cancel an evaluation run")
+  @doc("Cancels an evaluation run by name")
   @post
   cancel is EvaluationsOperations.ResourceAction<
     Evaluation,
@@ -51,6 +55,7 @@ interface Evaluations {
     Http.NoContentResponse
   >;
 
-  @doc("Delete an evaluation run by name")
+  @summary("Delete an evaluation run")
+  @doc("Deletes an evaluation run by name")
   delete is EvaluationsOperations.ResourceDelete<Evaluation>;
 }

@@ -219,7 +219,6 @@ using Azure.AI.Projects;
 @@usage(CreateAgentVersionRequest, Usage.input);
 @@access(CreateAgentVersionRequest, Access.public);
 
-
 // Ensure SessionLogEvent and SessionLogEventType are emitted
 @@usage(SessionLogEvent, Usage.output);
 @@access(SessionLogEvent, Access.public);
