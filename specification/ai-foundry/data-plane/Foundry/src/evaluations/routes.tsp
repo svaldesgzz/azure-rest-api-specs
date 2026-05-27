@@ -33,6 +33,7 @@ interface Evaluations {
   >;
 
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations"
+  @summary("Create an agent evaluation run")
   @doc("Creates an agent evaluation run.")
   @route("runs:runAgent")
   @post

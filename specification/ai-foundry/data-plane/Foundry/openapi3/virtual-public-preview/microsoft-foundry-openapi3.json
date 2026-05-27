@@ -1312,6 +1312,7 @@
           }
         ],
         "description": "Creates the agent. Creates a new code-based agent. Uploads the code zip and creates the agent in a single call.\nThe agent name is provided in the `x-ms-agent-name` header since POST /agents has no name in the URL path.\nThe SHA-256 hex digest of the zip is provided in the `x-ms-code-zip-sha256` header for integrity and dedup.\nThe request body is multipart/form-data with a JSON metadata part and a binary code part (part order is irrelevant).\nMaximum upload size is 250 MB.",
+        "summary": "Create the agent Create a new code-based agent",
         "responses": {
           "200": {
             "description": "The request has succeeded.",
@@ -1375,6 +1376,7 @@
       },
       "get": {
         "operationId": "Agents_listAgents",
+        "summary": "List all agents",
         "description": "Returns the list of all agents.",
         "parameters": [
           {
@@ -1506,6 +1508,7 @@
     "/agents/endpoint/protocols/invocations_ws": {
       "get": {
         "operationId": "AgentWebsocket_connectEndpointWebsocket",
+        "summary": "Establish a WebSocket connection to a hosted agent",
         "description": "Establishes a WebSocket connection to a hosted agent. The target project and\nagent are passed as query parameters. The service resolves (or creates) a\nsession, resolves the agent version, then relays text and binary frames\nbidirectionally between the client and the agent (1 MB maximum frame size).\n\nThe client must send an HTTP GET with `Upgrade: websocket` headers.",
         "parameters": [
           {
@@ -1638,6 +1641,7 @@
     "/agents/{agent_name}": {
       "get": {
         "operationId": "Agents_getAgent",
+        "summary": "Retrieve the agent",
         "description": "Retrieves the agent.",
         "parameters": [
           {
@@ -1738,6 +1742,7 @@
           }
         ],
         "description": "Updates the agent by adding a new version if there are any changes to the agent definition.\nIf no changes, returns the existing agent version. Updates a code-based agent by uploading new code and creating a new version.\nIf the code and definition are unchanged (matched by x-ms-code-zip-sha256 header), returns the existing version.\nThe request body is multipart/form-data with a JSON metadata part and a binary code part (part order is irrelevant).\nMaximum upload size is 250 MB.",
+        "summary": "Update the agent by adding a new version if there are any changes t Update a code-based agent by uploading new code and creating a new ",
         "responses": {
           "200": {
             "description": "The request has succeeded.",
@@ -1801,6 +1806,7 @@
       },
       "delete": {
         "operationId": "Agents_deleteAgent",
+        "summary": "Delete an agent",
         "description": "Deletes an agent. For hosted agents, if any version has active sessions, the request\nis rejected with HTTP 409 unless `force` is set to true. When force is true, all\nassociated sessions are cascade-deleted along with the agent and its versions.",
         "parameters": [
           {
@@ -1872,6 +1878,7 @@
       },
       "patch": {
         "operationId": "Agents_patchAgentObject",
+        "summary": "Update an agent endpoint",
         "description": "Updates an agent endpoint.",
         "parameters": [
           {
@@ -1892,7 +1899,8 @@
             "required": true,
             "description": "The name of the agent to retrieve.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "title": "The name of the agent to retrieve"
             }
           },
           {
@@ -1961,6 +1969,7 @@
     "/agents/{agent_name}/code:download": {
       "get": {
         "operationId": "Agents_downloadAgentCode",
+        "summary": "Download the code zip for a code-based hosted agent",
         "description": "Downloads the code zip for a code-based hosted agent.\nReturns the previously-uploaded zip (`application/zip`).\n\nIf `agent_version` is supplied, returns that version's code zip; otherwise\nreturns the latest version's code zip.\n\nThe SHA-256 digest of the returned bytes matches the `content_hash` on the\nresolved version's `code_configuration`.",
         "parameters": [
           {
@@ -2481,6 +2490,7 @@
     "/agents/{agent_name}/endpoint/sessions": {
       "post": {
         "operationId": "Agents_createSession",
+        "summary": "Create a new session for an agent endpoint",
         "description": "Creates a new session for an agent endpoint.\nThe endpoint resolves the backing agent version from `version_indicator` and\nenforces session ownership using the provided isolation key for session-mutating operations.",
         "parameters": [
           {
@@ -2577,6 +2587,7 @@
       },
       "get": {
         "operationId": "Agents_listSessions",
+        "summary": "List Returns a list of sessions for the specified agent",
         "description": "Returns a list of sessions for the specified agent.",
         "parameters": [
           {
@@ -3175,6 +3186,7 @@
     "/agents/{agent_name}/endpoint/sessions/{session_id}": {
       "get": {
         "operationId": "Agents_getSession",
+        "summary": "Retrieve a session by ID",
         "description": "Retrieves a session by ID.",
         "parameters": [
           {
@@ -3270,6 +3282,7 @@
       },
       "delete": {
         "operationId": "Agents_deleteSession",
+        "summary": "Delete a session synchronously",
         "description": "Deletes a session synchronously.\nReturns 204 No Content when the session is deleted or does not exist.",
         "parameters": [
           {
@@ -3360,6 +3373,7 @@
     "/agents/{agent_name}/endpoint/sessions/{session_id}:stop": {
       "post": {
         "operationId": "Agents_stopSession",
+        "summary": "Stop a session",
         "description": "Stops a session.\nReturns 204 No Content when the stop succeeds.",
         "parameters": [
           {
@@ -3441,6 +3455,7 @@
     "/agents/{agent_name}/import": {
       "post": {
         "operationId": "Agents_updateAgentFromManifest",
+        "summary": "Update the agent from a manifest by adding a new version if there a",
         "description": "Updates the agent from a manifest by adding a new version if there are any changes to the agent definition.\nIf no changes, returns the existing agent version.",
         "parameters": [
           {
@@ -3790,8 +3805,8 @@
             }
           }
         ],
-        "description": "Creates a new agent version.",
-        "summary": "Create an agent version",
+        "description": "Creates a new agent version. Creates a new agent version from code. Uploads the code zip and creates a new version\nfor an existing agent. The SHA-256 hex digest of the zip is provided in the\n`x-ms-code-zip-sha256` header for integrity and dedup.\nThe request body is multipart/form-data with a JSON metadata part and a binary code part (part order is irrelevant).\nMaximum upload size is 250 MB.",
+        "summary": "Create an agent version Create an agent version from code",
         "responses": {
           "200": {
             "description": "The request has succeeded.",
@@ -3855,6 +3870,7 @@
       },
       "get": {
         "operationId": "Agents_listAgentVersions",
+        "summary": "List versions of an agent",
         "description": "Returns the list of versions of an agent.",
         "parameters": [
           {
@@ -3985,6 +4001,7 @@
     "/agents/{agent_name}/versions/{agent_version}": {
       "get": {
         "operationId": "Agents_getAgentVersion",
+        "summary": "Retrieve a specific version of an agent",
         "description": "Retrieves a specific version of an agent.",
         "parameters": [
           {
@@ -4054,6 +4071,7 @@
       },
       "delete": {
         "operationId": "Agents_deleteAgentVersion",
+        "summary": "Delete a specific version of an agent",
         "description": "Deletes a specific version of an agent. For hosted agents, if the version has active\nsessions, the request is rejected with HTTP 409 unless `force` is set to true. When\nforce is true, all sessions associated with this version are cascade-deleted.",
         "parameters": [
           {
@@ -4933,6 +4951,7 @@
     "/agents/{agent_name}/versions/{agent_version}/sessions/{session_id}:logstream": {
       "get": {
         "operationId": "Agents_getSessionLogStream",
+        "summary": "Stream console logs (stdout / stderr) for a specific hosted agent s",
         "description": "Streams console logs (stdout / stderr) for a specific hosted agent session\nas a Server-Sent Events (SSE) stream.\n\nEach SSE frame contains:\n- `event`: always `\"log\"`\n- `data`: a plain-text log line (currently JSON-formatted, but the schema\nis not contractual and may include additional keys or change format\nover time — clients should treat it as an opaque string)\n\nExample SSE frames:\n```\nevent: log\ndata: {\"timestamp\":\"2026-03-10T09:33:17.121Z\",\"stream\":\"stdout\",\"message\":\"Starting FoundryCBAgent server on port 8088\"}\n\nevent: log\ndata: {\"timestamp\":\"2026-03-10T09:33:17.130Z\",\"stream\":\"stderr\",\"message\":\"INFO: Application startup complete.\"}\n\nevent: log\ndata: {\"timestamp\":\"2026-03-10T09:34:52.714Z\",\"stream\":\"status\",\"message\":\"Successfully connected to container\"}\n\nevent: log\ndata: {\"timestamp\":\"2026-03-10T09:35:52.714Z\",\"stream\":\"status\",\"message\":\"No logs since last 60 seconds\"}\n```\n\nThe stream remains open until the client disconnects or the server\nterminates the connection. Clients should handle reconnection as needed.",
         "parameters": [
           {
@@ -5104,6 +5123,7 @@
     "/agents:import": {
       "post": {
         "operationId": "Agents_createAgentFromManifest",
+        "summary": "Create an agent from a manifest",
         "description": "Creates an agent from a manifest.",
         "parameters": [
           {
@@ -8431,6 +8451,7 @@
     "/evaluations/runs:runAgent": {
       "post": {
         "operationId": "Evaluations_createAgentEvaluation",
+        "summary": "Create an agent evaluation run",
         "description": "Creates an agent evaluation run.",
         "parameters": [
           {
@@ -9276,6 +9297,7 @@
       },
       "delete": {
         "operationId": "EvaluatorGenerationJobs_delete",
+        "summary": "Delete an evaluator generation job by its ID",
         "description": "Deletes an evaluator generation job by its ID. Deletes the job record only;\nthe generated evaluator (if any) is preserved.",
         "parameters": [
           {
@@ -14164,6 +14186,7 @@
     "/openai/v1/conversations": {
       "post": {
         "operationId": "createConversation",
+        "summary": "Create a conversation",
         "description": "Creates a conversation.",
         "parameters": [
           {
@@ -14224,6 +14247,7 @@
       },
       "get": {
         "operationId": "listConversations",
+        "summary": "List all conversations",
         "description": "Returns the list of all conversations.",
         "parameters": [
           {
@@ -14364,6 +14388,7 @@
     "/openai/v1/conversations/{conversation_id}": {
       "post": {
         "operationId": "updateConversation",
+        "summary": "Update a conversation",
         "description": "Updates a conversation.",
         "parameters": [
           {
@@ -14433,6 +14458,7 @@
       },
       "get": {
         "operationId": "getConversation",
+        "summary": "Retrieve a conversation",
         "description": "Retrieves a conversation.",
         "parameters": [
           {
@@ -14492,6 +14518,7 @@
       },
       "delete": {
         "operationId": "deleteConversation",
+        "summary": "Delete a conversation",
         "description": "Deletes a conversation.",
         "parameters": [
           {
@@ -14553,6 +14580,7 @@
     "/openai/v1/conversations/{conversation_id}/items": {
       "post": {
         "operationId": "createConversationItems",
+        "summary": "Create items in a conversation with the given ID",
         "description": "Creates items in a conversation with the given ID.",
         "parameters": [
           {
@@ -14648,6 +14676,7 @@
       },
       "get": {
         "operationId": "listConversationItems",
+        "summary": "List all items for a conversation with the given ID",
         "description": "Lists all items for a conversation with the given ID.",
         "parameters": [
           {
@@ -14787,6 +14816,7 @@
     "/openai/v1/conversations/{conversation_id}/items/{item_id}": {
       "get": {
         "operationId": "getConversationItem",
+        "summary": "Get a single item from a conversation with the given IDs",
         "description": "Gets a single item from a conversation with the given IDs.",
         "parameters": [
           {
@@ -14855,6 +14885,7 @@
       },
       "delete": {
         "operationId": "deleteConversationItem",
+        "summary": "Delete an item from a conversation with the given IDs",
         "description": "Deletes an item from a conversation with the given IDs.",
         "parameters": [
           {
@@ -15842,6 +15873,7 @@
     "/openai/v1/fine_tuning/jobs": {
       "post": {
         "operationId": "createFineTuningJob",
+        "summary": "Create a fine-tuning job which begins the process of creating a new",
         "description": "Creates a fine-tuning job which begins the process of creating a new model from a given dataset.\n\nResponse includes details of the enqueued job including job status and the name of the fine-tuned models once complete.\n\n[Learn more about fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)",
         "parameters": [
           {
@@ -15903,6 +15935,7 @@
       },
       "get": {
         "operationId": "listPaginatedFineTuningJobs",
+        "summary": "List your organization's fine-tuning jobs",
         "description": "Lists your organization's fine-tuning jobs",
         "parameters": [
           {
@@ -15978,6 +16011,7 @@
     "/openai/v1/fine_tuning/jobs/{fine_tuning_job_id}": {
       "get": {
         "operationId": "retrieveFineTuningJob",
+        "summary": "Get info about a fine-tuning job",
         "description": "Gets info about a fine-tuning job.\n\n[Learn more about fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)",
         "parameters": [
           {
@@ -16040,6 +16074,7 @@
     "/openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel": {
       "post": {
         "operationId": "cancelFineTuningJob",
+        "summary": "Immediately cancel a fine-tune job",
         "description": "Immediately cancels a fine-tune job.",
         "parameters": [
           {
@@ -16102,6 +16137,7 @@
     "/openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/checkpoints": {
       "get": {
         "operationId": "listFineTuningJobCheckpoints",
+        "summary": "List checkpoints for a fine-tuning job",
         "description": "Lists checkpoints for a fine-tuning job.",
         "parameters": [
           {
@@ -16186,6 +16222,7 @@
     "/openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/events": {
       "get": {
         "operationId": "listFineTuningJobEvents",
+        "summary": "Get fine-grained status updates for a fine-tuning job",
         "description": "Gets fine-grained status updates for a fine-tuning job.",
         "parameters": [
           {
@@ -16270,6 +16307,7 @@
     "/openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/pause": {
       "post": {
         "operationId": "pauseFineTuningJob",
+        "summary": "Pause a running fine-tune job",
         "description": "Pauses a running fine-tune job.",
         "parameters": [
           {
@@ -16332,6 +16370,7 @@
     "/openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/resume": {
       "post": {
         "operationId": "resumeFineTuningJob",
+        "summary": "Resume a paused fine-tune job",
         "description": "Resumes a paused fine-tune job.",
         "parameters": [
           {
@@ -16406,6 +16445,7 @@
           }
         ],
         "description": "Creates a model response. Creates a model response (streaming response).",
+        "summary": "Create a model response Create a model response (streaming response)",
         "responses": {
           "200": {
             "description": "The request has succeeded.",
@@ -17035,6 +17075,7 @@
       },
       "get": {
         "operationId": "listResponses",
+        "summary": "List all responses",
         "description": "Returns the list of all responses.",
         "parameters": [
           {
@@ -17185,6 +17226,7 @@
     "/openai/v1/responses/compact": {
       "post": {
         "operationId": "compactResponseConversation",
+        "summary": "Produces a compaction of a responses conversation",
         "description": "Produces a compaction of a responses conversation.",
         "parameters": [],
         "responses": {
@@ -17300,6 +17342,7 @@
           }
         ],
         "description": "Retrieves a model response with the given ID. Retrieves a model response with the given ID (streaming response).",
+        "summary": "Retrieve a model response with the given ID Retrieve a model response with the given ID (streaming response)",
         "responses": {
           "200": {
             "description": "The request has succeeded.",
@@ -17352,6 +17395,7 @@
       },
       "delete": {
         "operationId": "deleteResponse",
+        "summary": "Delete a model response",
         "description": "Deletes a model response.",
         "parameters": [
           {
@@ -17422,6 +17466,7 @@
     "/openai/v1/responses/{response_id}/cancel": {
       "post": {
         "operationId": "cancelResponse",
+        "summary": "Cancel a model response",
         "description": "Cancels a model response.",
         "parameters": [
           {
@@ -17492,6 +17537,7 @@
     "/openai/v1/responses/{response_id}/input_items": {
       "get": {
         "operationId": "listInputItems",
+        "summary": "List Returns a list of input items for a given response",
         "description": "Returns a list of input items for a given response.",
         "parameters": [
           {
@@ -17629,6 +17675,7 @@
     "/redTeams/runs": {
       "get": {
         "operationId": "RedTeams_list",
+        "summary": "List a redteam by name",
         "description": "Lists a redteam by name.",
         "parameters": [
           {
@@ -17705,6 +17752,7 @@
     "/redTeams/runs/{name}": {
       "get": {
         "operationId": "RedTeams_get",
+        "summary": "Get a redteam by name",
         "description": "Gets a redteam by name.",
         "parameters": [
           {
@@ -17790,6 +17838,7 @@
     "/redTeams/runs:run": {
       "post": {
         "operationId": "RedTeams_create",
+        "summary": "Create a redteam run",
         "description": "Creates a redteam run.",
         "parameters": [
           {
@@ -17866,6 +17915,7 @@
     "/routines": {
       "get": {
         "operationId": "listRoutines",
+        "summary": "List routines",
         "description": "Lists routines.",
         "parameters": [
           {
@@ -18004,6 +18054,7 @@
     "/routines/{routine_name}": {
       "put": {
         "operationId": "createOrUpdateRoutine",
+        "summary": "Create or update a routine",
         "description": "Creates or update a routine.",
         "parameters": [
           {
@@ -18085,6 +18136,7 @@
       },
       "get": {
         "operationId": "getRoutine",
+        "summary": "Retrieve a routine",
         "description": "Retrieves a routine.",
         "parameters": [
           {
@@ -18156,6 +18208,7 @@
       },
       "delete": {
         "operationId": "deleteRoutine",
+        "summary": "Delete a routine",
         "description": "Deletes a routine.",
         "parameters": [
           {
@@ -18222,6 +18275,7 @@
     "/routines/{routine_name}/runs": {
       "get": {
         "operationId": "listRoutineRuns",
+        "summary": "List prior runs for a routine",
         "description": "Lists prior runs for a routine.",
         "parameters": [
           {
@@ -18366,6 +18420,7 @@
     "/routines/{routine_name}:disable": {
       "post": {
         "operationId": "disableRoutine",
+        "summary": "Disable a routine",
         "description": "Disables a routine.",
         "parameters": [
           {
@@ -18439,6 +18494,7 @@
     "/routines/{routine_name}:dispatch_async": {
       "post": {
         "operationId": "dispatchRoutineAsync",
+        "summary": "Queue an asynchronous routine dispatch",
         "description": "Queues an asynchronous routine dispatch.",
         "parameters": [
           {
@@ -18522,6 +18578,7 @@
     "/routines/{routine_name}:enable": {
       "post": {
         "operationId": "enableRoutine",
+        "summary": "Enable a routine",
         "description": "Enables a routine.",
         "parameters": [
           {
@@ -18595,6 +18652,7 @@
     "/schedules": {
       "get": {
         "operationId": "Schedules_list",
+        "summary": "List all schedules",
         "description": "Lists all schedules.",
         "parameters": [
           {
@@ -18691,6 +18749,7 @@
     "/schedules/{id}": {
       "delete": {
         "operationId": "Schedules_delete",
+        "summary": "Delete a schedule",
         "description": "Deletes a schedule.",
         "parameters": [
           {
@@ -18767,6 +18826,7 @@
       },
       "get": {
         "operationId": "Schedules_get",
+        "summary": "Get a schedule by id",
         "description": "Gets a schedule by id.",
         "parameters": [
           {
@@ -18850,6 +18910,7 @@
       },
       "put": {
         "operationId": "Schedules_createOrUpdate",
+        "summary": "Create or update operation template",
         "description": "Creates or update operation template.",
         "parameters": [
           {
@@ -18956,6 +19017,7 @@
     "/schedules/{id}/runs": {
       "get": {
         "operationId": "Schedules_listRuns",
+        "summary": "List all schedule runs",
         "description": "Lists all schedule runs.",
         "parameters": [
           {
@@ -19061,6 +19123,7 @@
     "/schedules/{schedule_id}/runs/{run_id}": {
       "get": {
         "operationId": "Schedules_getRun",
+        "summary": "Get a schedule run by id",
         "description": "Gets a schedule run by id.",
         "parameters": [
           {
@@ -19144,6 +19207,7 @@
     "/skills": {
       "get": {
         "operationId": "Skills_listSkills",
+        "summary": "List all skills",
         "description": "Returns the list of all skills.",
         "parameters": [
           {
@@ -19282,6 +19346,7 @@
     "/skills/{name}": {
       "get": {
         "operationId": "Skills_getSkill",
+        "summary": "Retrieve a skill",
         "description": "Retrieves a skill.",
         "parameters": [
           {
@@ -19359,6 +19424,7 @@
       },
       "post": {
         "operationId": "updateSkill",
+        "summary": "Update a skill",
         "description": "Updates a skill.",
         "parameters": [
           {
@@ -19455,6 +19521,7 @@
       },
       "delete": {
         "operationId": "Skills_deleteSkill",
+        "summary": "Delete a skill",
         "description": "Deletes a skill.",
         "parameters": [
           {
@@ -19534,6 +19601,7 @@
     "/skills/{name}/content": {
       "get": {
         "operationId": "getSkillContent",
+        "summary": "Download the zip content for the default version of a skill",
         "description": "Downloads the zip content for the default version of a skill.",
         "parameters": [
           {
@@ -19647,6 +19715,7 @@
           }
         ],
         "description": "Creates a new version of a skill. If the skill does not exist, it will be created. Creates a new version of a skill from uploaded files via multipart form data.",
+        "summary": "Create a new version of a skill Create a new version of a skill from uploaded files via multipart f",
         "responses": {
           "200": {
             "description": "The request has succeeded.",
@@ -19727,6 +19796,7 @@
       },
       "get": {
         "operationId": "listSkillVersions",
+        "summary": "List all versions of a skill",
         "description": "Lists all versions of a skill.",
         "parameters": [
           {
@@ -19874,6 +19944,7 @@
     "/skills/{name}/versions/{version}": {
       "get": {
         "operationId": "getSkillVersion",
+        "summary": "Retrieve a specific version of a skill",
         "description": "Retrieves a specific version of a skill.",
         "parameters": [
           {
@@ -19960,6 +20031,7 @@
       },
       "delete": {
         "operationId": "deleteSkillVersion",
+        "summary": "Delete a specific version of a skill",
         "description": "Deletes a specific version of a skill.",
         "parameters": [
           {
@@ -20048,6 +20120,7 @@
     "/skills/{name}/versions/{version}/content": {
       "get": {
         "operationId": "getSkillVersionContent",
+        "summary": "Download the zip content for a specific version of a skill",
         "description": "Downloads the zip content for a specific version of a skill.",
         "parameters": [
           {
@@ -20136,6 +20209,7 @@
     "/toolboxes": {
       "get": {
         "operationId": "listToolboxes",
+        "summary": "List all toolboxes",
         "description": "Lists all toolboxes.",
         "parameters": [
           {
@@ -20257,6 +20331,7 @@
     "/toolboxes/{name}": {
       "get": {
         "operationId": "getToolbox",
+        "summary": "Retrieve a toolbox",
         "description": "Retrieves a toolbox.",
         "parameters": [
           {
@@ -20317,6 +20392,7 @@
       },
       "patch": {
         "operationId": "updateToolbox",
+        "summary": "Update a toolbox to point to a specific version",
         "description": "Updates a toolbox to point to a specific version.",
         "parameters": [
           {
@@ -20381,6 +20457,7 @@
       },
       "delete": {
         "operationId": "deleteToolbox",
+        "summary": "Delete a toolbox and all its versions",
         "description": "Deletes a toolbox and all its versions.",
         "parameters": [
           {
@@ -20436,6 +20513,7 @@
     "/toolboxes/{name}/versions": {
       "post": {
         "operationId": "createToolboxVersion",
+        "summary": "Create a new version of a toolbox",
         "description": "Creates a new version of a toolbox. If the toolbox does not exist, it will be created.",
         "parameters": [
           {
@@ -20546,6 +20624,7 @@
       },
       "get": {
         "operationId": "listToolboxVersions",
+        "summary": "List all versions of a toolbox",
         "description": "Lists all versions of a toolbox.",
         "parameters": [
           {
@@ -20676,6 +20755,7 @@
     "/toolboxes/{name}/versions/{version}": {
       "get": {
         "operationId": "getToolboxVersion",
+        "summary": "Retrieve a specific version of a toolbox",
         "description": "Retrieves a specific version of a toolbox.",
         "parameters": [
           {
@@ -20745,6 +20825,7 @@
       },
       "delete": {
         "operationId": "deleteToolboxVersion",
+        "summary": "Delete a specific version of a toolbox",
         "description": "Deletes a specific version of a toolbox.",
         "parameters": [
           {

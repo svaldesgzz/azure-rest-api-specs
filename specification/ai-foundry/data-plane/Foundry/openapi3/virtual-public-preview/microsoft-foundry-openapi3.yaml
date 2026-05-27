@@ -852,6 +852,7 @@ paths:
         The SHA-256 hex digest of the zip is provided in the `x-ms-code-zip-sha256` header for integrity and dedup.
         The request body is multipart/form-data with a JSON metadata part and a binary code part (part order is irrelevant).
         Maximum upload size is 250 MB.
+      summary: Create the agent Create a new code-based agent
       responses:
         '200':
           description: The request has succeeded.
@@ -890,6 +891,7 @@ paths:
                 contentType: application/json
     get:
       operationId: Agents_listAgents
+      summary: List all agents
       description: Returns the list of all agents.
       parameters:
         - name: kind
@@ -989,6 +991,7 @@ paths:
   /agents/endpoint/protocols/invocations_ws:
     get:
       operationId: AgentWebsocket_connectEndpointWebsocket
+      summary: Establish a WebSocket connection to a hosted agent
       description: |-
         Establishes a WebSocket connection to a hosted agent. The target project and
         agent are passed as query parameters. The service resolves (or creates) a
@@ -1082,6 +1085,7 @@ paths:
   /agents/{agent_name}:
     get:
       operationId: Agents_getAgent
+      summary: Retrieve the agent
       description: Retrieves the agent.
       parameters:
         - name: agent_name
@@ -1152,6 +1156,7 @@ paths:
         If the code and definition are unchanged (matched by x-ms-code-zip-sha256 header), returns the existing version.
         The request body is multipart/form-data with a JSON metadata part and a binary code part (part order is irrelevant).
         Maximum upload size is 250 MB.
+      summary: 'Update the agent by adding a new version if there are any changes t Update a code-based agent by uploading new code and creating a new '
       responses:
         '200':
           description: The request has succeeded.
@@ -1190,6 +1195,7 @@ paths:
                 contentType: application/json
     delete:
       operationId: Agents_deleteAgent
+      summary: Delete an agent
       description: |-
         Deletes an agent. For hosted agents, if any version has active sessions, the request
         is rejected with HTTP 409 unless `force` is set to true. When force is true, all
@@ -1239,6 +1245,7 @@ paths:
         - Agents
     patch:
       operationId: Agents_patchAgentObject
+      summary: Update an agent endpoint
       description: Updates an agent endpoint.
       parameters:
         - name: Foundry-Features
@@ -1255,6 +1262,7 @@ paths:
           description: The name of the agent to retrieve.
           schema:
             type: string
+            title: The name of the agent to retrieve
         - name: api-version
           in: query
           required: true
@@ -1295,6 +1303,7 @@ paths:
   /agents/{agent_name}/code:download:
     get:
       operationId: Agents_downloadAgentCode
+      summary: Download the code zip for a code-based hosted agent
       description: |-
         Downloads the code zip for a code-based hosted agent.
         Returns the previously-uploaded zip (`application/zip`).
@@ -1652,6 +1661,7 @@ paths:
   /agents/{agent_name}/endpoint/sessions:
     post:
       operationId: Agents_createSession
+      summary: Create a new session for an agent endpoint
       description: |-
         Creates a new session for an agent endpoint.
         The endpoint resolves the backing agent version from `version_indicator` and
@@ -1716,6 +1726,7 @@ paths:
           - AgentEndpoints=V1Preview
     get:
       operationId: Agents_listSessions
+      summary: List Returns a list of sessions for the specified agent
       description: Returns a list of sessions for the specified agent.
       parameters:
         - name: Foundry-Features
@@ -2125,6 +2136,7 @@ paths:
   /agents/{agent_name}/endpoint/sessions/{session_id}:
     get:
       operationId: Agents_getSession
+      summary: Retrieve a session by ID
       description: Retrieves a session by ID.
       parameters:
         - name: Foundry-Features
@@ -2186,6 +2198,7 @@ paths:
           - AgentEndpoints=V1Preview
     delete:
       operationId: Agents_deleteSession
+      summary: Delete a session synchronously
       description: |-
         Deletes a session synchronously.
         Returns 204 No Content when the session is deleted or does not exist.
@@ -2246,6 +2259,7 @@ paths:
   /agents/{agent_name}/endpoint/sessions/{session_id}:stop:
     post:
       operationId: Agents_stopSession
+      summary: Stop a session
       description: |-
         Stops a session.
         Returns 204 No Content when the stop succeeds.
@@ -2300,6 +2314,7 @@ paths:
   /agents/{agent_name}/import:
     post:
       operationId: Agents_updateAgentFromManifest
+      summary: Update the agent from a manifest by adding a new version if there a
       description: |-
         Updates the agent from a manifest by adding a new version if there are any changes to the agent definition.
         If no changes, returns the existing agent version.
@@ -2545,8 +2560,13 @@ paths:
           description: SHA-256 hex digest of the uploaded code zip. Used for change detection (dedup) and integrity verification.
           schema:
             type: string
-      description: Creates a new agent version.
-      summary: Create an agent version
+      description: |-
+        Creates a new agent version. Creates a new agent version from code. Uploads the code zip and creates a new version
+        for an existing agent. The SHA-256 hex digest of the zip is provided in the
+        `x-ms-code-zip-sha256` header for integrity and dedup.
+        The request body is multipart/form-data with a JSON metadata part and a binary code part (part order is irrelevant).
+        Maximum upload size is 250 MB.
+      summary: Create an agent version Create an agent version from code
       responses:
         '200':
           description: The request has succeeded.
@@ -2585,6 +2605,7 @@ paths:
                 contentType: application/json
     get:
       operationId: Agents_listAgentVersions
+      summary: List versions of an agent
       description: Returns the list of versions of an agent.
       parameters:
         - name: agent_name
@@ -2683,6 +2704,7 @@ paths:
   /agents/{agent_name}/versions/{agent_version}:
     get:
       operationId: Agents_getAgentVersion
+      summary: Retrieve a specific version of an agent
       description: Retrieves a specific version of an agent.
       parameters:
         - name: agent_name
@@ -2727,6 +2749,7 @@ paths:
         - Agents
     delete:
       operationId: Agents_deleteAgentVersion
+      summary: Delete a specific version of an agent
       description: |-
         Deletes a specific version of an agent. For hosted agents, if the version has active
         sessions, the request is rejected with HTTP 409 unless `force` is set to true. When
@@ -3343,6 +3366,7 @@ paths:
   /agents/{agent_name}/versions/{agent_version}/sessions/{session_id}:logstream:
     get:
       operationId: Agents_getSessionLogStream
+      summary: Stream console logs (stdout / stderr) for a specific hosted agent s
       description: |-
         Streams console logs (stdout / stderr) for a specific hosted agent session
         as a Server-Sent Events (SSE) stream.
@@ -3482,6 +3506,7 @@ paths:
   /agents:import:
     post:
       operationId: Agents_createAgentFromManifest
+      summary: Create an agent from a manifest
       description: Creates an agent from a manifest.
       parameters:
         - name: api-version
@@ -5606,6 +5631,7 @@ paths:
   /evaluations/runs:runAgent:
     post:
       operationId: Evaluations_createAgentEvaluation
+      summary: Create an agent evaluation run
       description: Creates an agent evaluation run.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -6160,6 +6186,7 @@ paths:
           - Evaluations=V1Preview
     delete:
       operationId: EvaluatorGenerationJobs_delete
+      summary: Delete an evaluator generation job by its ID
       description: |-
         Deletes an evaluator generation job by its ID. Deletes the job record only;
         the generated evaluator (if any) is preserved.
@@ -10959,6 +10986,7 @@ paths:
   /openai/v1/conversations:
     post:
       operationId: createConversation
+      summary: Create a conversation
       description: Creates a conversation.
       parameters:
         - name: x-ms-user-isolation-key
@@ -10996,6 +11024,7 @@ paths:
               $ref: '#/components/schemas/OpenAI.CreateConversationBody'
     get:
       operationId: listConversations
+      summary: List all conversations
       description: Returns the list of all conversations.
       parameters:
         - name: limit
@@ -11101,6 +11130,7 @@ paths:
   /openai/v1/conversations/{conversation_id}:
     post:
       operationId: updateConversation
+      summary: Update a conversation
       description: Updates a conversation.
       parameters:
         - name: conversation_id
@@ -11144,6 +11174,7 @@ paths:
               $ref: '#/components/schemas/OpenAI.UpdateConversationBody'
     get:
       operationId: getConversation
+      summary: Retrieve a conversation
       description: Retrieves a conversation.
       parameters:
         - name: conversation_id
@@ -11181,6 +11212,7 @@ paths:
         - Conversations
     delete:
       operationId: deleteConversation
+      summary: Delete a conversation
       description: Deletes a conversation.
       parameters:
         - name: conversation_id
@@ -11219,6 +11251,7 @@ paths:
   /openai/v1/conversations/{conversation_id}/items:
     post:
       operationId: createConversationItems
+      summary: Create items in a conversation with the given ID
       description: Creates items in a conversation with the given ID.
       parameters:
         - name: conversation_id
@@ -11282,6 +11315,7 @@ paths:
                 - items
     get:
       operationId: listConversationItems
+      summary: List all items for a conversation with the given ID
       description: Lists all items for a conversation with the given ID.
       parameters:
         - name: conversation_id
@@ -11386,6 +11420,7 @@ paths:
   /openai/v1/conversations/{conversation_id}/items/{item_id}:
     get:
       operationId: getConversationItem
+      summary: Get a single item from a conversation with the given IDs
       description: Gets a single item from a conversation with the given IDs.
       parameters:
         - name: conversation_id
@@ -11429,6 +11464,7 @@ paths:
         - Conversations
     delete:
       operationId: deleteConversationItem
+      summary: Delete an item from a conversation with the given IDs
       description: Deletes an item from a conversation with the given IDs.
       parameters:
         - name: conversation_id
@@ -12077,6 +12113,7 @@ paths:
   /openai/v1/fine_tuning/jobs:
     post:
       operationId: createFineTuningJob
+      summary: Create a fine-tuning job which begins the process of creating a new
       description: |-
         Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
 
@@ -12120,6 +12157,7 @@ paths:
               $ref: '#/components/schemas/OpenAI.CreateFineTuningJobRequest'
     get:
       operationId: listPaginatedFineTuningJobs
+      summary: List your organization's fine-tuning jobs
       description: Lists your organization's fine-tuning jobs
       parameters:
         - name: after
@@ -12169,6 +12207,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}:
     get:
       operationId: retrieveFineTuningJob
+      summary: Get info about a fine-tuning job
       description: |-
         Gets info about a fine-tuning job.
 
@@ -12211,6 +12250,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel:
     post:
       operationId: cancelFineTuningJob
+      summary: Immediately cancel a fine-tune job
       description: Immediately cancels a fine-tune job.
       parameters:
         - name: fine_tuning_job_id
@@ -12250,6 +12290,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/checkpoints:
     get:
       operationId: listFineTuningJobCheckpoints
+      summary: List checkpoints for a fine-tuning job
       description: Lists checkpoints for a fine-tuning job.
       parameters:
         - name: fine_tuning_job_id
@@ -12305,6 +12346,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/events:
     get:
       operationId: listFineTuningJobEvents
+      summary: Get fine-grained status updates for a fine-tuning job
       description: Gets fine-grained status updates for a fine-tuning job.
       parameters:
         - name: fine_tuning_job_id
@@ -12360,6 +12402,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/pause:
     post:
       operationId: pauseFineTuningJob
+      summary: Pause a running fine-tune job
       description: Pauses a running fine-tune job.
       parameters:
         - name: fine_tuning_job_id
@@ -12399,6 +12442,7 @@ paths:
   /openai/v1/fine_tuning/jobs/{fine_tuning_job_id}/resume:
     post:
       operationId: resumeFineTuningJob
+      summary: Resume a paused fine-tune job
       description: Resumes a paused fine-tune job.
       parameters:
         - name: fine_tuning_job_id
@@ -12446,6 +12490,7 @@ paths:
           schema:
             type: string
       description: Creates a model response. Creates a model response (streaming response).
+      summary: Create a model response Create a model response (streaming response)
       responses:
         '200':
           description: The request has succeeded.
@@ -12778,6 +12823,7 @@ paths:
                       description: The structured inputs to the response that can participate in prompt template substitution or tool argument bindings.
     get:
       operationId: listResponses
+      summary: List all responses
       description: Returns the list of all responses.
       parameters:
         - name: limit
@@ -12890,6 +12936,7 @@ paths:
   /openai/v1/responses/compact:
     post:
       operationId: compactResponseConversation
+      summary: Produces a compaction of a responses conversation
       description: Produces a compaction of a responses conversation.
       parameters: []
       responses:
@@ -12964,6 +13011,7 @@ paths:
             enum:
               - text/event-stream
       description: Retrieves a model response with the given ID. Retrieves a model response with the given ID (streaming response).
+      summary: Retrieve a model response with the given ID Retrieve a model response with the given ID (streaming response)
       responses:
         '200':
           description: The request has succeeded.
@@ -12996,6 +13044,7 @@ paths:
         - Responses
     delete:
       operationId: deleteResponse
+      summary: Delete a model response
       description: Deletes a model response.
       parameters:
         - name: response_id
@@ -13040,6 +13089,7 @@ paths:
   /openai/v1/responses/{response_id}/cancel:
     post:
       operationId: cancelResponse
+      summary: Cancel a model response
       description: Cancels a model response.
       parameters:
         - name: response_id
@@ -13084,6 +13134,7 @@ paths:
   /openai/v1/responses/{response_id}/input_items:
     get:
       operationId: listInputItems
+      summary: List Returns a list of input items for a given response
       description: Returns a list of input items for a given response.
       parameters:
         - name: response_id
@@ -13186,6 +13237,7 @@ paths:
   /redTeams/runs:
     get:
       operationId: RedTeams_list
+      summary: List a redteam by name
       description: Lists a redteam by name.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -13233,6 +13285,7 @@ paths:
   /redTeams/runs/{name}:
     get:
       operationId: RedTeams_get
+      summary: Get a redteam by name
       description: Gets a redteam by name.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -13286,6 +13339,7 @@ paths:
   /redTeams/runs:run:
     post:
       operationId: RedTeams_create
+      summary: Create a redteam run
       description: Creates a redteam run.
       parameters:
         - name: Foundry-Features
@@ -13334,6 +13388,7 @@ paths:
   /routines:
     get:
       operationId: listRoutines
+      summary: List routines
       description: Lists routines.
       parameters:
         - name: Foundry-Features
@@ -13437,6 +13492,7 @@ paths:
   /routines/{routine_name}:
     put:
       operationId: createOrUpdateRoutine
+      summary: Create or update a routine
       description: Creates or update a routine.
       parameters:
         - name: Foundry-Features
@@ -13487,6 +13543,7 @@ paths:
           - Routines=V1Preview
     get:
       operationId: getRoutine
+      summary: Retrieve a routine
       description: Retrieves a routine.
       parameters:
         - name: Foundry-Features
@@ -13531,6 +13588,7 @@ paths:
           - Routines=V1Preview
     delete:
       operationId: deleteRoutine
+      summary: Delete a routine
       description: Deletes a routine.
       parameters:
         - name: Foundry-Features
@@ -13572,6 +13630,7 @@ paths:
   /routines/{routine_name}/runs:
     get:
       operationId: listRoutineRuns
+      summary: List prior runs for a routine
       description: Lists prior runs for a routine.
       parameters:
         - name: Foundry-Features
@@ -13677,6 +13736,7 @@ paths:
   /routines/{routine_name}:disable:
     post:
       operationId: disableRoutine
+      summary: Disable a routine
       description: Disables a routine.
       parameters:
         - name: Foundry-Features
@@ -13722,6 +13782,7 @@ paths:
   /routines/{routine_name}:dispatch_async:
     post:
       operationId: dispatchRoutineAsync
+      summary: Queue an asynchronous routine dispatch
       description: Queues an asynchronous routine dispatch.
       parameters:
         - name: Foundry-Features
@@ -13773,6 +13834,7 @@ paths:
   /routines/{routine_name}:enable:
     post:
       operationId: enableRoutine
+      summary: Enable a routine
       description: Enables a routine.
       parameters:
         - name: Foundry-Features
@@ -13818,6 +13880,7 @@ paths:
   /schedules:
     get:
       operationId: Schedules_list
+      summary: List all schedules
       description: Lists all schedules.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -13879,6 +13942,7 @@ paths:
   /schedules/{id}:
     delete:
       operationId: Schedules_delete
+      summary: Delete a schedule
       description: Deletes a schedule.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -13927,6 +13991,7 @@ paths:
         - Schedules
     get:
       operationId: Schedules_get
+      summary: Get a schedule by id
       description: Gets a schedule by id.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -13979,6 +14044,7 @@ paths:
         - Schedules
     put:
       operationId: Schedules_createOrUpdate
+      summary: Create or update operation template
       description: Creates or update operation template.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -14045,6 +14111,7 @@ paths:
   /schedules/{id}/runs:
     get:
       operationId: Schedules_listRuns
+      summary: List all schedule runs
       description: Lists all schedule runs.
       parameters:
         - $ref: '#/components/parameters/Azure.Core.Foundations.ApiVersionParameter'
@@ -14112,6 +14179,7 @@ paths:
   /schedules/{schedule_id}/runs/{run_id}:
     get:
       operationId: Schedules_getRun
+      summary: Get a schedule run by id
       description: Gets a schedule run by id.
       parameters:
         - name: schedule_id
@@ -14165,6 +14233,7 @@ paths:
   /skills:
     get:
       operationId: Skills_listSkills
+      summary: List all skills
       description: Returns the list of all skills.
       parameters:
         - name: limit
@@ -14268,6 +14337,7 @@ paths:
   /skills/{name}:
     get:
       operationId: Skills_getSkill
+      summary: Retrieve a skill
       description: Retrieves a skill.
       parameters:
         - name: name
@@ -14317,6 +14387,7 @@ paths:
           - Skills=V1Preview
     post:
       operationId: updateSkill
+      summary: Update a skill
       description: Updates a skill.
       parameters:
         - name: name
@@ -14378,6 +14449,7 @@ paths:
           - Skills=V1Preview
     delete:
       operationId: Skills_deleteSkill
+      summary: Delete a skill
       description: Deletes a skill.
       parameters:
         - name: name
@@ -14428,6 +14500,7 @@ paths:
   /skills/{name}/content:
     get:
       operationId: getSkillContent
+      summary: Download the zip content for the default version of a skill
       description: Downloads the zip content for the default version of a skill.
       parameters:
         - name: name
@@ -14501,6 +14574,7 @@ paths:
             type: string
           explode: false
       description: Creates a new version of a skill. If the skill does not exist, it will be created. Creates a new version of a skill from uploaded files via multipart form data.
+      summary: Create a new version of a skill Create a new version of a skill from uploaded files via multipart f
       responses:
         '200':
           description: The request has succeeded.
@@ -14549,6 +14623,7 @@ paths:
                 contentType: text/plain
     get:
       operationId: listSkillVersions
+      summary: List all versions of a skill
       description: Lists all versions of a skill.
       parameters:
         - name: name
@@ -14658,6 +14733,7 @@ paths:
   /skills/{name}/versions/{version}:
     get:
       operationId: getSkillVersion
+      summary: Retrieve a specific version of a skill
       description: Retrieves a specific version of a skill.
       parameters:
         - name: name
@@ -14713,6 +14789,7 @@ paths:
           - Skills=V1Preview
     delete:
       operationId: deleteSkillVersion
+      summary: Delete a specific version of a skill
       description: Deletes a specific version of a skill.
       parameters:
         - name: name
@@ -14769,6 +14846,7 @@ paths:
   /skills/{name}/versions/{version}/content:
     get:
       operationId: getSkillVersionContent
+      summary: Download the zip content for a specific version of a skill
       description: Downloads the zip content for a specific version of a skill.
       parameters:
         - name: name
@@ -14825,6 +14903,7 @@ paths:
   /toolboxes:
     get:
       operationId: listToolboxes
+      summary: List all toolboxes
       description: Lists all toolboxes.
       parameters:
         - name: limit
@@ -14917,6 +14996,7 @@ paths:
   /toolboxes/{name}:
     get:
       operationId: getToolbox
+      summary: Retrieve a toolbox
       description: Retrieves a toolbox.
       parameters:
         - name: name
@@ -14955,6 +15035,7 @@ paths:
         - Toolboxes
     patch:
       operationId: updateToolbox
+      summary: Update a toolbox to point to a specific version
       description: Updates a toolbox to point to a specific version.
       parameters:
         - $ref: '#/components/parameters/UpdateToolboxRequest.name'
@@ -14994,6 +15075,7 @@ paths:
               $ref: '#/components/schemas/UpdateToolboxRequest'
     delete:
       operationId: deleteToolbox
+      summary: Delete a toolbox and all its versions
       description: Deletes a toolbox and all its versions.
       parameters:
         - name: name
@@ -15029,6 +15111,7 @@ paths:
   /toolboxes/{name}/versions:
     post:
       operationId: createToolboxVersion
+      summary: Create a new version of a toolbox
       description: Creates a new version of a toolbox. If the toolbox does not exist, it will be created.
       parameters:
         - name: name
@@ -15100,6 +15183,7 @@ paths:
                 - tools
     get:
       operationId: listToolboxVersions
+      summary: List all versions of a toolbox
       description: Lists all versions of a toolbox.
       parameters:
         - name: name
@@ -15198,6 +15282,7 @@ paths:
   /toolboxes/{name}/versions/{version}:
     get:
       operationId: getToolboxVersion
+      summary: Retrieve a specific version of a toolbox
       description: Retrieves a specific version of a toolbox.
       parameters:
         - name: name
@@ -15242,6 +15327,7 @@ paths:
         - Toolboxes
     delete:
       operationId: deleteToolboxVersion
+      summary: Delete a specific version of a toolbox
       description: Deletes a specific version of a toolbox.
       parameters:
         - name: name
