@@ -4191,7 +4191,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "The ARM resource id of the generated UpdateRun. e.g.: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/fleets/{fleetName}/updateRuns/{updateRunName}'.",
+          "description": "The ARM resource id of the generated UpdateRun. Empty string when no UpdateRun was generated (no-op). e.g.: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/fleets/{fleetName}/updateRuns/{updateRunName}'.",
           "readOnly": true
         }
       },
