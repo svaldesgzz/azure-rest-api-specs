@@ -40,7 +40,7 @@ interface AgentOptimizationJobs {
 
       @doc("The optimization job inputs.")
       @body
-      body: OptimizationJobInputs;
+      inputs: OptimizationJobInputs;
     },
     JobCreatedResponse<OptimizationJob>
   >;
@@ -76,7 +76,7 @@ interface AgentOptimizationJobs {
 
       @doc("Filter to jobs targeting this agent name.")
       @query
-      agentName?: string;
+      agent_name?: string;
     }
   >;
 
@@ -227,7 +227,7 @@ interface AgentOptimizationJobs {
 
       @doc("Promotion details.")
       @body
-      body: PromoteCandidateRequest;
+      candidate_request: PromoteCandidateRequest;
     },
     PromoteCandidateResponse
   >;
